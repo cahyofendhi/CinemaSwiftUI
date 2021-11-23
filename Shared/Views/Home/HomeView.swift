@@ -16,10 +16,9 @@ struct HomeView: View {
         NavigationView {
             
             List {
-                ForEach(self.datas, id: \.self) { it in
-                    Text("\(it)")
-                }
+                UpcomingView().listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
+            .listRowInsets(.none)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
                 ToolbarItem(placement: .principal) {
@@ -27,18 +26,8 @@ struct HomeView: View {
                         Text("Home")
                     }
                     .foregroundColor(.black)
-                    .frame(width: .infinity, height: .infinity, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
             })
-//            .navigationBarTitleDisplayMode(.inline)
-//                    .toolbar { // <2>
-//                        ToolbarItem(placement: .principal) { // <3>
-//                            VStack {
-//                                Text("Title").font(.headline)
-//                                Text("Subtitle").font(.subheadline)
-//                            }
-//                        }
-//                    }
             
         }
         
