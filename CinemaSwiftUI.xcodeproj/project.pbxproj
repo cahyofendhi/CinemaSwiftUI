@@ -15,6 +15,7 @@
 		8EDAD548274D2761002AEACF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD51D274D2761002AEACF /* ContentView.swift */; };
 		8EDAD549274D2761002AEACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EDAD51E274D2761002AEACF /* Assets.xcassets */; };
 		8EDAD54A274D2761002AEACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EDAD51E274D2761002AEACF /* Assets.xcassets */; };
+		8EDAD55E274D2F1D002AEACF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD55D274D2F1D002AEACF /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8EDAD53E274D2761002AEACF /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDAD542274D2761002AEACF /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		8EDAD544274D2761002AEACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EDAD55D274D2F1D002AEACF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 		8EDAD55A274D2AC2002AEACF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8EDAD55D274D2F1D002AEACF /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EDAD55E274D2F1D002AEACF /* HomeView.swift in Sources */,
 				8EDAD547274D2761002AEACF /* ContentView.swift in Sources */,
 				8EDAD545274D2761002AEACF /* CinemaSwiftUIApp.swift in Sources */,
 			);

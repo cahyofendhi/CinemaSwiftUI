@@ -10,13 +10,13 @@ import SwiftUI
 struct ContentView: View {
     
     init() {
-        UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().barTintColor = .white
+        UIToolbar.appearance().barTintColor = UIColor.red
     }
     
     var body: some View {
         TabView {
-            Text("Home").tabItem {
+            HomeView().tabItem {
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5, content: {
                     Image("ic_home")
                     Text("Home")
