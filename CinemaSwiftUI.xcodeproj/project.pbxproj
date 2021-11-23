@@ -98,6 +98,8 @@
 		8EDAD51B274D2761002AEACF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8EDAD55C274D2AD2002AEACF /* Core */,
+				8EDAD559274D2AB6002AEACF /* Views */,
 				8EDAD51C274D2761002AEACF /* CinemaSwiftUIApp.swift */,
 				8EDAD51D274D2761002AEACF /* ContentView.swift */,
 				8EDAD51E274D2761002AEACF /* Assets.xcassets */,
@@ -149,6 +151,36 @@
 				8EDAD544274D2761002AEACF /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		8EDAD559274D2AB6002AEACF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8EDAD55B274D2ACA002AEACF /* Search */,
+				8EDAD55A274D2AC2002AEACF /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8EDAD55A274D2AC2002AEACF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8EDAD55B274D2ACA002AEACF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		8EDAD55C274D2AD2002AEACF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
