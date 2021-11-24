@@ -19,10 +19,35 @@ struct UpcomingView: View {
                   sidesScaling: 0.85,
                   isWrap: false) { item in
             
-            VStack(alignment: .center, spacing: 16, content: {
-                Text("Title \(item)")
-                Text("Description \(item)")
-            })
+            ZStack() {
+                ImageView(withURL: "https://talenthouse-res.cloudinary.com/image/upload/c_limit,f_auto,fl_progressive,h_1280,w_1280/v1613767843/user-1106846/profile/fojndsvlvdjtayy11ucr.jpg",
+                    mode: .fill)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
+                VStack {
+                    Spacer()
+                    HStack {
+                        VStack(alignment: .leading, spacing: 5){
+                            Text("Pump Action Interaction")
+                                .font(.system(size: 14))
+                                .foregroundColor(.white)
+                                .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                            Text("While you can always go for a simplified title sequence for the opening of your flick, it may be the film's benefit to splurge ")
+                                .font(.system(size: 12))
+                                .foregroundColor(.white)
+                                .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                        }
+                        .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 5))
+                        Spacer()
+                    }.background(
+                        LinearGradient(
+                            gradient: Gradient(
+                                colors: [.gray.opacity(0.5), .black.opacity(0.5)]),
+                            startPoint: .top, endPoint: .bottom)
+                    )
+                }
+                .padding(.bottom, 0)
+            }
             .frame(
                   minWidth: 0,
                   maxWidth: .infinity,
@@ -30,11 +55,10 @@ struct UpcomingView: View {
                   maxHeight: .infinity,
                   alignment: .topLeading
                 )
-            .background(Color.gray)
             .shadow(radius: 10)
             .cornerRadius(10)
         }
-        .frame(height: 100)
+        .frame(height: 150)
     }
 }
 

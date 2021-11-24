@@ -22,6 +22,8 @@
 		8EDAD579274D3BFF002AEACF /* ACarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD574274D3BFF002AEACF /* ACarouselViewModel.swift */; };
 		8EDAD57A274D3BFF002AEACF /* ACarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD575274D3BFF002AEACF /* ACarousel.swift */; };
 		8EDAD57B274D3BFF002AEACF /* AppLifeCycleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD576274D3BFF002AEACF /* AppLifeCycleModifier.swift */; };
+		8EF4401E274E2AB8009FCD69 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4401D274E2AB8009FCD69 /* ViewExtension.swift */; };
+		8EF44021274E2DCE009FCD69 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF44020274E2DCE009FCD69 /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		8EDAD574274D3BFF002AEACF /* ACarouselViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACarouselViewModel.swift; sourceTree = "<group>"; };
 		8EDAD575274D3BFF002AEACF /* ACarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACarousel.swift; sourceTree = "<group>"; };
 		8EDAD576274D3BFF002AEACF /* AppLifeCycleModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLifeCycleModifier.swift; sourceTree = "<group>"; };
+		8EF4401D274E2AB8009FCD69 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		8EF44020274E2DCE009FCD69 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +200,8 @@
 		8EDAD55C274D2AD2002AEACF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8EF4401F274E2DBF009FCD69 /* Image */,
+				8EF4401C274E2A9D009FCD69 /* extension */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -226,6 +232,22 @@
 				8EDAD573274D3BFF002AEACF /* View+ReceiveTimer.swift */,
 			);
 			path = ACarousel;
+			sourceTree = "<group>";
+		};
+		8EF4401C274E2A9D009FCD69 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				8EF4401D274E2AB8009FCD69 /* ViewExtension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		8EF4401F274E2DBF009FCD69 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				8EF44020274E2DCE009FCD69 /* ImageView.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,6 +411,8 @@
 				8EDAD57B274D3BFF002AEACF /* AppLifeCycleModifier.swift in Sources */,
 				8EDAD57A274D3BFF002AEACF /* ACarousel.swift in Sources */,
 				8EDAD55E274D2F1D002AEACF /* HomeView.swift in Sources */,
+				8EF44021274E2DCE009FCD69 /* ImageView.swift in Sources */,
+				8EF4401E274E2AB8009FCD69 /* ViewExtension.swift in Sources */,
 				8EDAD578274D3BFF002AEACF /* View+ReceiveTimer.swift in Sources */,
 				8EDAD547274D2761002AEACF /* ContentView.swift in Sources */,
 				8EDAD561274D36E5002AEACF /* UpcomingView.swift in Sources */,

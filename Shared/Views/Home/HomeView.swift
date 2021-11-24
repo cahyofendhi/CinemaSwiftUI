@@ -16,8 +16,10 @@ struct HomeView: View {
         NavigationView {
             
             List {
-                UpcomingView().listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                UpcomingView()
+                    .hideRowSeparator()
             }
+            .listRowBackground(Color.white)
             .listRowInsets(.none)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
