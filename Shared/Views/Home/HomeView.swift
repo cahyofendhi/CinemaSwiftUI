@@ -11,15 +11,26 @@ struct HomeView: View {
     
     var datas = [1, 2, 3, 4, 5, 6, 7]
     
+    init() {
+        UITableView.appearance().showsVerticalScrollIndicator = false
+    }
+    
     var body: some View {
         
         NavigationView {
             
             List {
-                ForEach(self.datas, id: \.self) { it in
-                    Text("\(it)")
-                }
+                UpcomingView()
+                    .hideRowSeparator()
+                PopularMovieView()
+                    .hideRowSeparator()
+                    .padding(.top, 16)
+                TopRateMovieView()
+                    .hideRowSeparator()
+                    .padding(.top, 16)
             }
+            .listRowBackground(Color.white)
+            .listRowInsets(.none)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
                 ToolbarItem(placement: .principal) {
@@ -27,18 +38,8 @@ struct HomeView: View {
                         Text("Home")
                     }
                     .foregroundColor(.black)
-                    .frame(width: .infinity, height: .infinity, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
             })
-//            .navigationBarTitleDisplayMode(.inline)
-//                    .toolbar { // <2>
-//                        ToolbarItem(placement: .principal) { // <3>
-//                            VStack {
-//                                Text("Title").font(.headline)
-//                                Text("Subtitle").font(.subheadline)
-//                            }
-//                        }
-//                    }
             
         }
         
