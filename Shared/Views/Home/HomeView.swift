@@ -11,6 +11,10 @@ struct HomeView: View {
     
     var datas = [1, 2, 3, 4, 5, 6, 7]
     
+    init() {
+        UITableView.appearance().showsVerticalScrollIndicator = false
+    }
+    
     var body: some View {
         
         NavigationView {
@@ -18,6 +22,12 @@ struct HomeView: View {
             List {
                 UpcomingView()
                     .hideRowSeparator()
+                PopularMovieView()
+                    .hideRowSeparator()
+                    .padding(.top, 16)
+                TopRateMovieView()
+                    .hideRowSeparator()
+                    .padding(.top, 16)
             }
             .listRowBackground(Color.white)
             .listRowInsets(.none)
