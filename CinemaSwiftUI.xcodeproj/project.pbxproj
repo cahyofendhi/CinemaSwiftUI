@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E3AFCE9274F734E007ECE00 /* TVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3AFCE8274F734E007ECE00 /* TVView.swift */; };
+		8E3AFCEC274F7677007ECE00 /* TVTopRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3AFCEB274F7677007ECE00 /* TVTopRateView.swift */; };
+		8E3AFCEE274F8045007ECE00 /* TVVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3AFCED274F8045007ECE00 /* TVVideoView.swift */; };
 		8EDAD538274D2761002AEACF /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD537274D2761002AEACF /* Tests_iOS.swift */; };
 		8EDAD543274D2761002AEACF /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD542274D2761002AEACF /* Tests_macOS.swift */; };
 		8EDAD545274D2761002AEACF /* CinemaSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD51C274D2761002AEACF /* CinemaSwiftUIApp.swift */; };
@@ -47,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E3AFCE8274F734E007ECE00 /* TVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVView.swift; sourceTree = "<group>"; };
+		8E3AFCEB274F7677007ECE00 /* TVTopRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVTopRateView.swift; sourceTree = "<group>"; };
+		8E3AFCED274F8045007ECE00 /* TVVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVVideoView.swift; sourceTree = "<group>"; };
 		8EDAD51C274D2761002AEACF /* CinemaSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaSwiftUIApp.swift; sourceTree = "<group>"; };
 		8EDAD51D274D2761002AEACF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8EDAD51E274D2761002AEACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E3AFCEA274F7665007ECE00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E3AFCEB274F7677007ECE00 /* TVTopRateView.swift */,
+				8E3AFCED274F8045007ECE00 /* TVVideoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8EDAD516274D2761002AEACF = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +196,7 @@
 		8EDAD559274D2AB6002AEACF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8EDAD55B274D2ACA002AEACF /* Search */,
+				8EDAD55B274D2ACA002AEACF /* TV */,
 				8EDAD55A274D2AC2002AEACF /* Home */,
 			);
 			path = Views;
@@ -196,11 +211,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		8EDAD55B274D2ACA002AEACF /* Search */ = {
+		8EDAD55B274D2ACA002AEACF /* TV */ = {
 			isa = PBXGroup;
 			children = (
+				8E3AFCEA274F7665007ECE00 /* Views */,
+				8E3AFCE8274F734E007ECE00 /* TVView.swift */,
 			);
-			path = Search;
+			path = TV;
 			sourceTree = "<group>";
 		};
 		8EDAD55C274D2AD2002AEACF /* Core */ = {
@@ -418,6 +435,7 @@
 			files = (
 				8EDAD577274D3BFF002AEACF /* ACarouselAutoScroll.swift in Sources */,
 				8EDAD57B274D3BFF002AEACF /* AppLifeCycleModifier.swift in Sources */,
+				8E3AFCEC274F7677007ECE00 /* TVTopRateView.swift in Sources */,
 				8EDAD57A274D3BFF002AEACF /* ACarousel.swift in Sources */,
 				8EFFE63D274E87D3007F3479 /* ScreenExtension.swift in Sources */,
 				8EDAD55E274D2F1D002AEACF /* HomeView.swift in Sources */,
@@ -425,6 +443,8 @@
 				8EF4401E274E2AB8009FCD69 /* ViewExtension.swift in Sources */,
 				8EDAD578274D3BFF002AEACF /* View+ReceiveTimer.swift in Sources */,
 				8EDAD547274D2761002AEACF /* ContentView.swift in Sources */,
+				8E3AFCE9274F734E007ECE00 /* TVView.swift in Sources */,
+				8E3AFCEE274F8045007ECE00 /* TVVideoView.swift in Sources */,
 				8EFFE63B274E85E8007F3479 /* PopularMovieView.swift in Sources */,
 				8EDAD561274D36E5002AEACF /* UpcomingView.swift in Sources */,
 				8EFFE63F274E90B5007F3479 /* TopRateMovieView.swift in Sources */,

@@ -23,7 +23,7 @@ struct ContentView: View {
                 })
             }.tag(0)
             
-            Text("Search").tabItem {
+            TVView().tabItem {
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5, content: {
                     Image("ic_search")
                     Text("Search")
