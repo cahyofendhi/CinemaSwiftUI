@@ -10,6 +10,8 @@
 		8E3AFCE9274F734E007ECE00 /* TVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3AFCE8274F734E007ECE00 /* TVView.swift */; };
 		8E3AFCEC274F7677007ECE00 /* TVTopRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3AFCEB274F7677007ECE00 /* TVTopRateView.swift */; };
 		8E3AFCEE274F8045007ECE00 /* TVVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3AFCED274F8045007ECE00 /* TVVideoView.swift */; };
+		8E3C4DDF274FD1EE0089009C /* DetailMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C4DDE274FD1EE0089009C /* DetailMovieView.swift */; };
+		8EAC80DF27546B1C00C01FAC /* TabBarAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC80DE27546B1C00C01FAC /* TabBarAccessor.swift */; };
 		8EDAD538274D2761002AEACF /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD537274D2761002AEACF /* Tests_iOS.swift */; };
 		8EDAD543274D2761002AEACF /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD542274D2761002AEACF /* Tests_macOS.swift */; };
 		8EDAD545274D2761002AEACF /* CinemaSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD51C274D2761002AEACF /* CinemaSwiftUIApp.swift */; };
@@ -53,6 +55,8 @@
 		8E3AFCE8274F734E007ECE00 /* TVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVView.swift; sourceTree = "<group>"; };
 		8E3AFCEB274F7677007ECE00 /* TVTopRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVTopRateView.swift; sourceTree = "<group>"; };
 		8E3AFCED274F8045007ECE00 /* TVVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVVideoView.swift; sourceTree = "<group>"; };
+		8E3C4DDE274FD1EE0089009C /* DetailMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieView.swift; sourceTree = "<group>"; };
+		8EAC80DE27546B1C00C01FAC /* TabBarAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAccessor.swift; sourceTree = "<group>"; };
 		8EDAD51C274D2761002AEACF /* CinemaSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaSwiftUIApp.swift; sourceTree = "<group>"; };
 		8EDAD51D274D2761002AEACF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8EDAD51E274D2761002AEACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +124,22 @@
 				8E3AFCED274F8045007ECE00 /* TVVideoView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8E3C4DDD274FD1D50089009C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8E3C4DDE274FD1EE0089009C /* DetailMovieView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		8EAC80DD27546B0300C01FAC /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8EAC80DE27546B1C00C01FAC /* TabBarAccessor.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		8EDAD516274D2761002AEACF = {
@@ -196,6 +216,7 @@
 		8EDAD559274D2AB6002AEACF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8E3C4DDD274FD1D50089009C /* Detail */,
 				8EDAD55B274D2ACA002AEACF /* TV */,
 				8EDAD55A274D2AC2002AEACF /* Home */,
 			);
@@ -223,6 +244,7 @@
 		8EDAD55C274D2AD2002AEACF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8EAC80DD27546B0300C01FAC /* TabBar */,
 				8EF4401F274E2DBF009FCD69 /* Image */,
 				8EF4401C274E2A9D009FCD69 /* extension */,
 			);
@@ -434,11 +456,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EDAD577274D3BFF002AEACF /* ACarouselAutoScroll.swift in Sources */,
+				8EAC80DF27546B1C00C01FAC /* TabBarAccessor.swift in Sources */,
 				8EDAD57B274D3BFF002AEACF /* AppLifeCycleModifier.swift in Sources */,
 				8E3AFCEC274F7677007ECE00 /* TVTopRateView.swift in Sources */,
 				8EDAD57A274D3BFF002AEACF /* ACarousel.swift in Sources */,
 				8EFFE63D274E87D3007F3479 /* ScreenExtension.swift in Sources */,
 				8EDAD55E274D2F1D002AEACF /* HomeView.swift in Sources */,
+				8E3C4DDF274FD1EE0089009C /* DetailMovieView.swift in Sources */,
 				8EF44021274E2DCE009FCD69 /* ImageView.swift in Sources */,
 				8EF4401E274E2AB8009FCD69 /* ViewExtension.swift in Sources */,
 				8EDAD578274D3BFF002AEACF /* View+ReceiveTimer.swift in Sources */,

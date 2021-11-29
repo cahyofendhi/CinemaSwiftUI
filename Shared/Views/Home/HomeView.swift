@@ -11,6 +11,8 @@ struct HomeView: View {
     
     var datas = [1, 2, 3, 4, 5, 6, 7]
     
+    @State private var tabBar: UITabBar! = nil
+    
     init() {
         UITableView.appearance().showsVerticalScrollIndicator = false
     }
@@ -40,8 +42,18 @@ struct HomeView: View {
                     .foregroundColor(.black)
                 }
             })
+            .onAppear {
+                self.tabBar.isHidden = false
+            }
+            .onDisappear {
+                self.tabBar.isHidden = true
+            }
             
         }
+        .background(TabBarAccessor { tabbar in
+            self.tabBar = tabbar
+        })
+
         
     }
     

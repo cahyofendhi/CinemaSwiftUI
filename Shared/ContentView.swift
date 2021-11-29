@@ -14,23 +14,29 @@ struct ContentView: View {
         UIToolbar.appearance().barTintColor = UIColor.red
     }
     
+    @State var tabSelection: Tabs = .home
+    
     var body: some View {
-        TabView {
+        TabView(selection: $tabSelection) {
             HomeView().tabItem {
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5, content: {
                     Image("ic_home")
                     Text("Home")
                 })
-            }.tag(0)
+            }.tag(Tabs.home)
             
             TVView().tabItem {
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5, content: {
                     Image("ic_search")
                     Text("Search")
                 })
-            }.tag(1)
+            }.tag(Tabs.tv)
         }
         .accentColor(.red)
+    }
+    
+    enum Tabs {
+        case home, tv
     }
     
 }
