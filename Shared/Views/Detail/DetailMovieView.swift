@@ -19,6 +19,12 @@ struct DetailMovieView: View {
             
         }
         .navigationTitle("Movie")
+        .onAppear {
+            self.tabBar?.isHidden = true
+        }
+        .onDisappear {
+            self.tabBar?.isHidden = false
+        }
         
     }
     

@@ -54,10 +54,7 @@ struct TVView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
             .onAppear {
-//                self.tabBar?.isHidden = false
-            }
-            .onDisappear {
-//                self.tabBar?.isHidden = true
+                self.tabBar?.isHidden = false
             }
         }
         .background(TabBarAccessor { tabbar in

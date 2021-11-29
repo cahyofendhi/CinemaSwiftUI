@@ -22,7 +22,7 @@ struct HomeView: View {
                 UpcomingView()
                     .hideRowSeparator()
 
-                PopularMovieView()
+                PopularMovieView(tabBar: self.tabBar)
                     .hideRowSeparator()
                     .padding(.top, 16)
                 
@@ -40,10 +40,6 @@ struct HomeView: View {
                 }
             })
             .onAppear {
-                self.tabBar.isHidden = false
-                UITableView.appearance().showsVerticalScrollIndicator = false
-            }
-            .onDisappear {
                 self.tabBar.isHidden = false
             }
             
