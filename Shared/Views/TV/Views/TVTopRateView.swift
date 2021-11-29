@@ -26,7 +26,7 @@ struct TVTopRateView: View {
             
                 ScrollView(.horizontal, showsIndicators: false, content: {
                     HStack(alignment: .top, spacing: 16, content: {
-                        Divider()
+                        Rectangle().fill(Color.white).frame(width: 0)
                         ForEach(data, id: \.self) { it in
                             VStack(alignment: .leading, spacing: 5, content: {
                                 ImageView(withURL: "https://talenthouse-res.cloudinary.com/image/upload/c_limit,f_auto,fl_progressive,h_1280,w_1280/v1613767843/user-1106846/profile/fojndsvlvdjtayy11ucr.jpg",
@@ -49,7 +49,7 @@ struct TVTopRateView: View {
                             })
                             .frame(width: UIScreen.width / 4)
                         }
-                        Divider()
+                        Rectangle().fill(Color.white).frame(width: 0)
                     })
                 })
         })

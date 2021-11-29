@@ -23,7 +23,9 @@ struct PopularMovieView: View {
             
                 ScrollView(.horizontal, showsIndicators: false, content: {
                     HStack(alignment: .top, spacing: 16, content: {
-                        Divider()
+                        
+                        Rectangle().fill(Color.white).frame(width: 0)
+
                         ForEach(data, id: \.self) { it in
                             
                             NavigationLink(destination: DetailMovieView()) {
@@ -50,7 +52,7 @@ struct PopularMovieView: View {
                             }
                             
                         }
-                        Divider()
+                        Rectangle().fill(Color.white).frame(width: 0)
                     })
                 })
         })

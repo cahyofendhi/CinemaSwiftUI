@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct HomeView: View {
     
@@ -13,26 +14,22 @@ struct HomeView: View {
     
     @State private var tabBar: UITabBar! = nil
     
-    init() {
-        UITableView.appearance().showsVerticalScrollIndicator = false
-    }
-    
     var body: some View {
         
         NavigationView {
             
-            List {
+            NoSepratorList {
                 UpcomingView()
                     .hideRowSeparator()
+
                 PopularMovieView()
                     .hideRowSeparator()
                     .padding(.top, 16)
+                
                 TopRateMovieView()
                     .hideRowSeparator()
                     .padding(.top, 16)
             }
-            .listRowBackground(Color.white)
-            .listRowInsets(.none)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
                 ToolbarItem(placement: .principal) {
@@ -44,9 +41,10 @@ struct HomeView: View {
             })
             .onAppear {
                 self.tabBar.isHidden = false
+                UITableView.appearance().showsVerticalScrollIndicator = false
             }
             .onDisappear {
-                self.tabBar.isHidden = true
+                self.tabBar.isHidden = false
             }
             
         }

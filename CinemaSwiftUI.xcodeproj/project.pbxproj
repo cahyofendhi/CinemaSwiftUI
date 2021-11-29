@@ -12,6 +12,8 @@
 		8E3AFCEE274F8045007ECE00 /* TVVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3AFCED274F8045007ECE00 /* TVVideoView.swift */; };
 		8E3C4DDF274FD1EE0089009C /* DetailMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C4DDE274FD1EE0089009C /* DetailMovieView.swift */; };
 		8EAC80DF27546B1C00C01FAC /* TabBarAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC80DE27546B1C00C01FAC /* TabBarAccessor.swift */; };
+		8EAC80E527547C8C00C01FAC /* CustomNavigationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC80E427547C8C00C01FAC /* CustomNavigationStyle.swift */; };
+		8EAC80EA2754826600C01FAC /* NoSeparatorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC80E92754826600C01FAC /* NoSeparatorList.swift */; };
 		8EDAD538274D2761002AEACF /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD537274D2761002AEACF /* Tests_iOS.swift */; };
 		8EDAD543274D2761002AEACF /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD542274D2761002AEACF /* Tests_macOS.swift */; };
 		8EDAD545274D2761002AEACF /* CinemaSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD51C274D2761002AEACF /* CinemaSwiftUIApp.swift */; };
@@ -57,6 +59,8 @@
 		8E3AFCED274F8045007ECE00 /* TVVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVVideoView.swift; sourceTree = "<group>"; };
 		8E3C4DDE274FD1EE0089009C /* DetailMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieView.swift; sourceTree = "<group>"; };
 		8EAC80DE27546B1C00C01FAC /* TabBarAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAccessor.swift; sourceTree = "<group>"; };
+		8EAC80E427547C8C00C01FAC /* CustomNavigationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationStyle.swift; sourceTree = "<group>"; };
+		8EAC80E92754826600C01FAC /* NoSeparatorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSeparatorList.swift; sourceTree = "<group>"; };
 		8EDAD51C274D2761002AEACF /* CinemaSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaSwiftUIApp.swift; sourceTree = "<group>"; };
 		8EDAD51D274D2761002AEACF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8EDAD51E274D2761002AEACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,6 +144,22 @@
 				8EAC80DE27546B1C00C01FAC /* TabBarAccessor.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		8EAC80E327547C7500C01FAC /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				8EAC80E427547C8C00C01FAC /* CustomNavigationStyle.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		8EAC80E82754825000C01FAC /* List */ = {
+			isa = PBXGroup;
+			children = (
+				8EAC80E92754826600C01FAC /* NoSeparatorList.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		8EDAD516274D2761002AEACF = {
@@ -244,6 +264,8 @@
 		8EDAD55C274D2AD2002AEACF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8EAC80E82754825000C01FAC /* List */,
+				8EAC80E327547C7500C01FAC /* Navigation */,
 				8EAC80DD27546B0300C01FAC /* TabBar */,
 				8EF4401F274E2DBF009FCD69 /* Image */,
 				8EF4401C274E2A9D009FCD69 /* extension */,
@@ -457,12 +479,14 @@
 			files = (
 				8EDAD577274D3BFF002AEACF /* ACarouselAutoScroll.swift in Sources */,
 				8EAC80DF27546B1C00C01FAC /* TabBarAccessor.swift in Sources */,
+				8EAC80E527547C8C00C01FAC /* CustomNavigationStyle.swift in Sources */,
 				8EDAD57B274D3BFF002AEACF /* AppLifeCycleModifier.swift in Sources */,
 				8E3AFCEC274F7677007ECE00 /* TVTopRateView.swift in Sources */,
 				8EDAD57A274D3BFF002AEACF /* ACarousel.swift in Sources */,
 				8EFFE63D274E87D3007F3479 /* ScreenExtension.swift in Sources */,
 				8EDAD55E274D2F1D002AEACF /* HomeView.swift in Sources */,
 				8E3C4DDF274FD1EE0089009C /* DetailMovieView.swift in Sources */,
+				8EAC80EA2754826600C01FAC /* NoSeparatorList.swift in Sources */,
 				8EF44021274E2DCE009FCD69 /* ImageView.swift in Sources */,
 				8EF4401E274E2AB8009FCD69 /* ViewExtension.swift in Sources */,
 				8EDAD578274D3BFF002AEACF /* View+ReceiveTimer.swift in Sources */,
