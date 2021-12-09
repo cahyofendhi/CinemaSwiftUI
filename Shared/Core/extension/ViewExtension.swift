@@ -38,7 +38,28 @@ extension EdgeInsets {
 }
 
 extension View {
+    
     func hideRowSeparator(insets: EdgeInsets = .defaultListRowInsets, background: Color = .white) -> some View {
         modifier(HideRowSeparatorModifier(insets: insets, background: background))
     }
+    
+    func cornerRadius(radius: CGFloat, corners: UIRectCorner) -> some View {
+        ModifiedContent(content: self, modifier: CornerRadiusStyle(radius: radius, corners: corners))
+    }
+    
+    func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
+       background(
+         GeometryReader { geometryProxy in
+           Color.clear
+             .preference(key: SizePreferenceKey.self, value: geometryProxy.size)
+         }
+       )
+       .onPreferenceChange(SizePreferenceKey.self, perform: onChange)
+    }
+    
+}
+
+private struct SizePreferenceKey: PreferenceKey {
+  static var defaultValue: CGSize = .zero
+  static func reduce(value: inout CGSize, nextValue: () -> CGSize) {}
 }

@@ -12,7 +12,7 @@ struct HomeView: View {
     
     var datas = [1, 2, 3, 4, 5, 6, 7]
     
-    @State private var tabBar: UITabBar! = nil
+    @State private var tabBar: UITabBar? = nil
     
     var body: some View {
         
@@ -40,7 +40,7 @@ struct HomeView: View {
                 }
             })
             .onAppear {
-                self.tabBar.isHidden = false
+                self.tabBar?.isHidden = false
             }
             
         }
