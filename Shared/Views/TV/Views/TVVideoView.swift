@@ -23,7 +23,7 @@ struct TVVideoView: View {
             
             HStack(alignment: .top, spacing: 16, content: {
                 
-                Divider()
+                Rectangle().fill(Color.white).frame(width: 0)
                 
                 ForEach(data, id: \.self) { it in
                     
@@ -47,7 +47,7 @@ struct TVVideoView: View {
                     
                 }
                 
-                Divider()
+                Rectangle().fill(Color.white).frame(width: 0)
                 
             })
             .frame(maxWidth: .infinity)

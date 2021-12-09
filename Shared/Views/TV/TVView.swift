@@ -9,12 +9,13 @@ import SwiftUI
 
 struct TVView: View {
     
+    @State private var tabBar: UITabBar? = nil
     
     var body: some View {
         
         NavigationView {
             
-            List {
+            NoSepratorList {
                 
                 HStack {
                     Text("TV Movie")
@@ -52,10 +53,13 @@ struct TVView: View {
             .listRowInsets(.none)
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
-            .onAppear() {
-                UITableView.appearance().showsVerticalScrollIndicator = false
+            .onAppear {
+                self.tabBar?.isHidden = false
             }
         }
+        .background(TabBarAccessor { tabbar in
+            self.tabBar = tabbar
+        })
         
     }
     
