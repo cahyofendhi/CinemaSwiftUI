@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TVVideoView: View {
     
-    var data = [1, 2, 3, 4, 5, 6, 7, 8]
+    let movies: [Movie]
     
     var body: some View {
         
@@ -25,11 +25,11 @@ struct TVVideoView: View {
                 
                 Rectangle().fill(Color.white).frame(width: 0)
                 
-                ForEach(data, id: \.self) { it in
+                ForEach(movies, id: \.self) { it in
                     
                     ZStack {
         
-                        ImageView(withURL: "https://ti.unpar.ac.id/wp-content/uploads/sites/10/2018/01/SHORT-MOVIE-THUMBNAIL.jpg", mode: .fill)
+                        ImageView(withURL: it.getImagePoster(), mode: .fill)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .aspectRatio(contentMode: .fill)
                             
@@ -61,6 +61,6 @@ struct TVVideoView: View {
 
 struct TVVideoView_Previews: PreviewProvider {
     static var previews: some View {
-        TVVideoView()
+        TVVideoView(movies: [])
     }
 }
