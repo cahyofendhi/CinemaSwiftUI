@@ -9,7 +9,8 @@ import SwiftUI
 
 struct TopRateMovieView: View {
     
-    var data = [1, 2, 3, 4, 5, 6, 7, 8]
+    let movies: [Movie]
+    @State var tabBar: UITabBar! = nil
     
     var body: some View {
         
@@ -23,39 +24,43 @@ struct TopRateMovieView: View {
             
             VStack {
                 
-                ForEach(data, id: \.self) { it in
+                ForEach(movies, id: \.self) { it in
                     
                     HStack(alignment: .top, spacing: 16, content: {
                         
-                        ImageView(withURL: "https://talenthouse-res.cloudinary.com/image/upload/c_limit,f_auto,fl_progressive,h_1280,w_1280/v1613767843/user-1106846/profile/fojndsvlvdjtayy11ucr.jpg",
-                            mode: .fill)
-                            .aspectRatio(3/4, contentMode: .fill)
-                            .frame(width: (UIScreen.width / 4))
-                            .cornerRadius(10)
+                        NavigationLink(destination: DetailMovieView(tabBar: self.tabBar, movie: it)) {
                         
-                        VStack(alignment: .leading, spacing: 5, content: {
-                            Text("Gracia")
-                                .font(.system(size: 12))
-                                .bold()
-                                .foregroundColor(.black)
+                            ImageView(withURL: it.getImagePoster(),
+                                mode: .fill)
+                                .aspectRatio(3/4, contentMode: .fill)
+                                .frame(width: (UIScreen.width / 4))
+                                .cornerRadius(10)
                             
-                            Text("8,5")
-                                .font(.system(size: 10))
-                                .padding(EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2))
-                                .background(Color.green)
-                                .foregroundColor(.white)
-                                .cornerRadius(3)
+                            VStack(alignment: .leading, spacing: 5, content: {
+                                Text(it.title!)
+                                    .font(.system(size: 12))
+                                    .bold()
+                                    .foregroundColor(.black)
+                                
+                                Text("\(String(format: "%.1f", it.voteAverage ?? 0))")
+                                    .font(.system(size: 10))
+                                    .padding(EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2))
+                                    .background(Color.green)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(3)
+                                
+                                Text(it.genreList())
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.gray)
+                                
+                                Text(DateFormat.convertStringDate(it.releaseDate ?? ""))
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.gray)
+                            })
                             
-                            Text("Action, Comedy, Drama")
-                                .font(.system(size: 12))
-                                .foregroundColor(.gray)
+                            Spacer()
                             
-                            Text("12/12/2021")
-                                .font(.system(size: 12))
-                                .foregroundColor(.gray)
-                        })
-                        
-                        Spacer()
+                        }
                         
                     })
                     .frame(width: UIScreen.width)
@@ -75,6 +80,6 @@ struct TopRateMovieView: View {
 
 struct TopRateMovieView_Previews: PreviewProvider {
     static var previews: some View {
-        TopRateMovieView()
+        TopRateMovieView(movies: [])
     }
 }

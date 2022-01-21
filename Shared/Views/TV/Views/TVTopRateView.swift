@@ -10,9 +10,11 @@ import SwiftUI
 struct TVTopRateView: View {
     
     
-    var data = [1, 2, 3, 4, 5, 6, 7, 8]
+    let movies: [Movie]
     
     let title: String?
+    
+    @State var tabBar: UITabBar! = nil
     
     var body: some View {
         
@@ -27,21 +29,21 @@ struct TVTopRateView: View {
                 ScrollView(.horizontal, showsIndicators: false, content: {
                     HStack(alignment: .top, spacing: 16, content: {
                         Rectangle().fill(Color.white).frame(width: 0)
-                        ForEach(data, id: \.self) { it in
+                        ForEach(movies, id: \.self) { it in
                             VStack(alignment: .leading, spacing: 5, content: {
-                                ImageView(withURL: "https://talenthouse-res.cloudinary.com/image/upload/c_limit,f_auto,fl_progressive,h_1280,w_1280/v1613767843/user-1106846/profile/fojndsvlvdjtayy11ucr.jpg",
+                                ImageView(withURL: it.getImagePoster(),
                                     mode: .fill)
                                     .frame(maxWidth: .infinity)
                                     .aspectRatio(3/4, contentMode: .fill)
                                     .cornerRadius(10)
                                 
-                                Text("Grozie Lipeli")
+                                Text(it.name ?? "")
                                     .bold()
                                     .font(.system(size: 10))
                                     .foregroundColor(.black)
                                     .lineLimit(2)
                                 
-                                Text("12/10/2021")
+                                Text(it.genreList())
                                     .bold()
                                     .font(.system(size: 10))
                                     .foregroundColor(.gray)
@@ -60,6 +62,6 @@ struct TVTopRateView: View {
 
 struct TVTopRateView_Previews: PreviewProvider {
     static var previews: some View {
-        TVTopRateView(title: "Movie")
+        TVTopRateView(movies: [], title: "Movie")
     }
 }

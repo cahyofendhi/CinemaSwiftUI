@@ -10,23 +10,24 @@ import UIKit
 
 struct HomeView: View {
     
-    var datas = [1, 2, 3, 4, 5, 6, 7]
     
     @State private var tabBar: UITabBar? = nil
+    
+    @ObservedObject private var viewModel = HomeViewModel()
     
     var body: some View {
         
         NavigationView {
             
             NoSepratorList {
-                UpcomingView()
+                UpcomingView(movies: viewModel.upcomingMovies ?? [], tabBar: self.tabBar)
                     .hideRowSeparator()
 
-                PopularMovieView(tabBar: self.tabBar)
+                PopularMovieView(movies: viewModel.popularMovies ?? [], tabBar: self.tabBar)
                     .hideRowSeparator()
                     .padding(.top, 16)
                 
-                TopRateMovieView()
+                TopRateMovieView(movies: viewModel.topMovies ?? [], tabBar: self.tabBar)
                     .hideRowSeparator()
                     .padding(.top, 16)
             }
@@ -34,7 +35,7 @@ struct HomeView: View {
             .toolbar(content: {
                 ToolbarItem(placement: .principal) {
                     VStack {
-                        Text("Home")
+                        Text("Movie")
                     }
                     .foregroundColor(.black)
                 }

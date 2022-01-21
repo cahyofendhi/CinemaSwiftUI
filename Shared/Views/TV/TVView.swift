@@ -11,6 +11,8 @@ struct TVView: View {
     
     @State private var tabBar: UITabBar? = nil
     
+    @ObservedObject private var viewModel = TvViewModel()
+    
     var body: some View {
         
         NavigationView {
@@ -37,14 +39,14 @@ struct TVView: View {
                 }
                 .hideRowSeparator()
                 
-                TVVideoView()
+                TVVideoView(movies: viewModel.onAirMovies ?? [], tabBar: self.tabBar)
                     .hideRowSeparator()
                 
-                TVTopRateView(title: "Popular")
+                TVTopRateView(movies: viewModel.popularMovies ?? [], title: "Popular", tabBar: self.tabBar)
                     .hideRowSeparator()
                     .padding(.top, 16)
                 
-                TVTopRateView(title: "Top Rate")
+                TVTopRateView(movies: viewModel.topMovies ?? [], title: "Top Rate", tabBar: self.tabBar)
                     .hideRowSeparator()
                     .padding(.top, 16)
                 
