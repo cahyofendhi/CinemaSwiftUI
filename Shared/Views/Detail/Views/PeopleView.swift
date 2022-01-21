@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PeopleView: View {
     
-    var data = [1, 2, 3, 4, 5, 6, 7]
+    var crews: [People]?
     
     var body: some View {
         
@@ -26,16 +26,16 @@ struct PeopleView: View {
                     
                     Rectangle().fill(Color.white).frame(width: 0)
                     
-                    ForEach(data, id: \.self) { it in
+                    ForEach(crews ?? [], id: \.self) { it in
                         
                         VStack {
                         
-                            ImageView(withURL: "https://talenthouse-res.cloudinary.com/image/upload/c_limit,f_auto,fl_progressive,h_1280,w_1280/v1613767843/user-1106846/profile/fojndsvlvdjtayy11ucr.jpg",
+                            ImageView(withURL: it.getImageProfile(),
                                 mode: .fill)
                                 .frame(width: UIScreen.width / 4, height: UIScreen.width / 4)
                                 .cornerRadius(10)
 
-                            Text("Charle Theron")
+                            Text(it.name ?? "")
                                 .bold()
                                 .font(.system(size: 10))
                                 .foregroundColor(.black)

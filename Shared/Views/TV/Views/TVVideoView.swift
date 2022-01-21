@@ -10,6 +10,7 @@ import SwiftUI
 struct TVVideoView: View {
     
     let movies: [Movie]
+    @State var tabBar: UITabBar! = nil
     
     var body: some View {
         

@@ -13,7 +13,7 @@ enum EndpointItem {
     case movieList(_ category: String)
     case searchMovie(group: String)
     case movieDetail(id: Int)
-    case movieMedia(id: Int)
+    case movieCrew(id: Int)
     case movieSimiliar(id: Int)
     case tvList(_ category: String)
     case tvDetail(id: Int)
@@ -41,7 +41,7 @@ extension EndpointItem: EndPointType {
             return "search/\(group)"
         case .movieDetail(let id):
             return "movie/\(id)"
-        case .movieMedia(let id):
+        case .movieCrew(let id):
             return "movie/\(id)/credits"
         case .movieSimiliar(let id):
             return "movie/\(id)/similar"

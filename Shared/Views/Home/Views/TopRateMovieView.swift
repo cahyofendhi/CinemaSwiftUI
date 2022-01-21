@@ -10,6 +10,7 @@ import SwiftUI
 struct TopRateMovieView: View {
     
     let movies: [Movie]
+    @State var tabBar: UITabBar! = nil
     
     var body: some View {
         
@@ -27,35 +28,39 @@ struct TopRateMovieView: View {
                     
                     HStack(alignment: .top, spacing: 16, content: {
                         
-                        ImageView(withURL: it.getImagePoster(),
-                            mode: .fill)
-                            .aspectRatio(3/4, contentMode: .fill)
-                            .frame(width: (UIScreen.width / 4))
-                            .cornerRadius(10)
+                        NavigationLink(destination: DetailMovieView(tabBar: self.tabBar, movie: it)) {
                         
-                        VStack(alignment: .leading, spacing: 5, content: {
-                            Text(it.title!)
-                                .font(.system(size: 12))
-                                .bold()
-                                .foregroundColor(.black)
+                            ImageView(withURL: it.getImagePoster(),
+                                mode: .fill)
+                                .aspectRatio(3/4, contentMode: .fill)
+                                .frame(width: (UIScreen.width / 4))
+                                .cornerRadius(10)
                             
-                            Text(String(format: "%f", 1.0))
-                                .font(.system(size: 10))
-                                .padding(EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2))
-                                .background(Color.green)
-                                .foregroundColor(.white)
-                                .cornerRadius(3)
+                            VStack(alignment: .leading, spacing: 5, content: {
+                                Text(it.title!)
+                                    .font(.system(size: 12))
+                                    .bold()
+                                    .foregroundColor(.black)
+                                
+                                Text("\(String(format: "%.1f", it.voteAverage ?? 0))")
+                                    .font(.system(size: 10))
+                                    .padding(EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2))
+                                    .background(Color.green)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(3)
+                                
+                                Text(it.genreList())
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.gray)
+                                
+                                Text(DateFormat.convertStringDate(it.releaseDate ?? ""))
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.gray)
+                            })
                             
-                            Text(it.genreList())
-                                .font(.system(size: 12))
-                                .foregroundColor(.gray)
+                            Spacer()
                             
-                            Text(DateFormat.convertStringDate(it.releaseDate ?? ""))
-                                .font(.system(size: 12))
-                                .foregroundColor(.gray)
-                        })
-                        
-                        Spacer()
+                        }
                         
                     })
                     .frame(width: UIScreen.width)

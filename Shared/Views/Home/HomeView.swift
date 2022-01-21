@@ -20,14 +20,14 @@ struct HomeView: View {
         NavigationView {
             
             NoSepratorList {
-                UpcomingView(movies: viewModel.upcomingMovies ?? [])
+                UpcomingView(movies: viewModel.upcomingMovies ?? [], tabBar: self.tabBar)
                     .hideRowSeparator()
 
                 PopularMovieView(movies: viewModel.popularMovies ?? [], tabBar: self.tabBar)
                     .hideRowSeparator()
                     .padding(.top, 16)
                 
-                TopRateMovieView(movies: viewModel.topMovies ?? [])
+                TopRateMovieView(movies: viewModel.topMovies ?? [], tabBar: self.tabBar)
                     .hideRowSeparator()
                     .padding(.top, 16)
             }

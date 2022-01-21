@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SimiliarMovieView: View {
     
-    var data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+    var movies: [Movie]?
     
     @State var tabBar: UITabBar? = nil
     
@@ -30,18 +30,18 @@ struct SimiliarMovieView: View {
                     GridItem(.flexible())
                 ], alignment: .leading, spacing: 16) {
                     
-                    ForEach(data, id: \.self) { item in
+                    ForEach(movies ?? [], id: \.self) { it in
                         
-                        NavigationLink(destination: DetailMovieView(tabBar: self.tabBar)) {
+                        NavigationLink(destination: DetailMovieView(tabBar: self.tabBar, movie: it)) {
                         
                             VStack(alignment: .center) {
                             
-                                ImageView(withURL: "https://talenthouse-res.cloudinary.com/image/upload/c_limit,f_auto,fl_progressive,h_1280,w_1280/v1613767843/user-1106846/profile/fojndsvlvdjtayy11ucr.jpg",
+                                ImageView(withURL: it.getImagePoster(),
                                     mode: .fill)
                                     .aspectRatio(1, contentMode: .fill)
                                     .cornerRadius(10)
                                 
-                                Text("Grozie Lipeli")
+                                Text(it.title ?? "")
                                     .bold()
                                     .font(.system(size: 10))
                                     .foregroundColor(.black)
@@ -57,6 +57,7 @@ struct SimiliarMovieView: View {
             }
             
         }
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
         
     }
     

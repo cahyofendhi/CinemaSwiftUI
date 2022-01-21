@@ -11,13 +11,17 @@ struct DetailMovieView: View {
     
     @State var tabBar: UITabBar?
     
+    @State var movie: Movie?
+    
+    @ObservedObject private var viewModel = DetailViewModel()
+    
     var body: some View {
         
         ZStack {
             
             
             VStack {
-                ImageView(withURL: "https://talenthouse-res.cloudinary.com/image/upload/c_limit,f_auto,fl_progressive,h_1280,w_1280/v1613767843/user-1106846/profile/fojndsvlvdjtayy11ucr.jpg",
+                ImageView(withURL: viewModel.movie?.getImagePoster() ?? "",
                     mode: .fill)
                     .frame(width: UIScreen.width, height: UIScreen.height / 3)
                 Spacer()
@@ -37,9 +41,9 @@ struct DetailMovieView: View {
                     VStack {
 
                         HStack {
-                            Text("The Old Guardian")
+                            Text(viewModel.movie?.title ?? "")
                             Spacer()
-                            Text("8,5")
+                            Text("\(String(format: "%.1f", viewModel.movie?.voteAverage ?? 0))")
                                 .font(.system(size: 10))
                                 .padding(EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2))
                                 .background(Color.green)
@@ -49,7 +53,7 @@ struct DetailMovieView: View {
                         .padding(.leading, 16)
                         .padding(.trailing, 16)
 
-                        TagView(data: ["Android", "iOS", "Flutter", "React Native"],
+                        TagView(data: viewModel.movie?.allGenre() ?? [],
                                 spacing: 5,
                                 padding: 5,
                                 backgroundColor: Color.white)
@@ -60,16 +64,16 @@ struct DetailMovieView: View {
                         HStack(alignment: .top, spacing: 10) {
 
                             VStack(alignment: .leading, spacing: 16) {
-                                StatusDescriptionView(title: "Status :", description: "Released")
-                                StatusDescriptionView(title: "Runtime :", description: "124")
-                                StatusDescriptionView(title: "Premiere :", description: "10/10/2022")
-                                StatusDescriptionView(title: "Budget :", description: "$120")
-                                StatusDescriptionView(title: "Revenue :", description: "$100")
+                                StatusDescriptionView(title: "Status :", description: viewModel.movie?.status ?? "")
+                                StatusDescriptionView(title: "Runtime :", description: "\(viewModel.movie?.runtime ?? 0)")
+                                StatusDescriptionView(title: "Premiere :", description: DateFormat.convertStringDate(viewModel.movie?.releaseDate ?? ""))
+                                StatusDescriptionView(title: "Budget :", description: (Double((viewModel.movie?.budget ?? 0))).toCurrency())
+                                StatusDescriptionView(title: "Revenue :", description: (Double((viewModel.movie?.revenue ?? 0))).toCurrency())
                             }
 
                             Spacer()
 
-                            ImageView(withURL: "https://talenthouse-res.cloudinary.com/image/upload/c_limit,f_auto,fl_progressive,h_1280,w_1280/v1613767843/user-1106846/profile/fojndsvlvdjtayy11ucr.jpg",
+                            ImageView(withURL: viewModel.movie?.getImageBackdrop() ?? "",
                                 mode: .fill)
                                 .frame(width: 100, height: 150)
                                 .cornerRadius(16)
@@ -84,25 +88,24 @@ struct DetailMovieView: View {
                                 .font(.system(size: 16))
                                 .foregroundColor(Color.black)
 
-                            Text("Lorem Ipsum  is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic")
+                            Text(viewModel.movie?.overview ?? "")
                                 .font(.system(size: 12))
                                 .foregroundColor(Color.gray)
                         }
                         .padding(.leading, 10)
                         .padding(.trailing, 10)
                         
-                        PeopleView()
+                        PeopleView(crews: viewModel.crews)
                             .padding(.top, 16)
-
+                        
                     }
                     .padding(.bottom, 40)
                     .background(Color.white)
                     .padding(.top, -8)
 
-                    
-                    SimiliarMovieView(tabBar: self.tabBar)
-                        .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
-                            .background(Color.white)
+                    SimiliarMovieView(movies: viewModel.similiar, tabBar: self.tabBar)
+                        .background(Color.white)
+                        .padding(.top, -20)
                         
                     Spacer()
                     
@@ -115,6 +118,7 @@ struct DetailMovieView: View {
         .navigationTitle("Movie")
         .onAppear {
             self.tabBar?.isHidden = true
+            self.viewModel.loadMovie(self.movie)
         }
         
     }

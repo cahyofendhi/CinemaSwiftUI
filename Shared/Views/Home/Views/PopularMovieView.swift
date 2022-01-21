@@ -31,7 +31,7 @@ struct PopularMovieView: View {
 
                     ForEach(movies, id: \.self) { it in
                         
-                        NavigationLink(destination: DetailMovieView(tabBar: self.tabBar)) {
+                        NavigationLink(destination: DetailMovieView(tabBar: self.tabBar, movie: it)) {
                             VStack(alignment: .leading, spacing: 5, content: {
                                 ImageView(withURL: it.getImagePoster(),
                                     mode: .fill)

@@ -39,14 +39,14 @@ struct TVView: View {
                 }
                 .hideRowSeparator()
                 
-                TVVideoView(movies: viewModel.onAirMovies ?? [])
+                TVVideoView(movies: viewModel.onAirMovies ?? [], tabBar: self.tabBar)
                     .hideRowSeparator()
                 
-                TVTopRateView(movies: viewModel.popularMovies ?? [], title: "Popular")
+                TVTopRateView(movies: viewModel.popularMovies ?? [], title: "Popular", tabBar: self.tabBar)
                     .hideRowSeparator()
                     .padding(.top, 16)
                 
-                TVTopRateView(movies: viewModel.topMovies ?? [], title: "Top Rate")
+                TVTopRateView(movies: viewModel.topMovies ?? [], title: "Top Rate", tabBar: self.tabBar)
                     .hideRowSeparator()
                     .padding(.top, 16)
                 

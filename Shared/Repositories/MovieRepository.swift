@@ -31,4 +31,16 @@ class MovieRepository {
                           completion: completion)
     }
     
+    func getDetailMovie(id: Int, completion: @escaping(ApiResult<Movie, ErrorModel>) ->()) {
+        self.service.call(type: EndpointItem.movieDetail(id: id), params: ["api_key": Constant.apiKey], completion: completion)
+    }
+    
+    func getMovieCrew(id: Int, completion: @escaping(ApiResult<PeopleResponse, ErrorModel>) ->()) {
+        self.service.call(type: EndpointItem.movieCrew(id: id), params: ["api_key": Constant.apiKey], completion: completion)
+    }
+    
+    func getMovieSimiliar(id: Int, completion: @escaping(ApiResult<SimilarResponse, ErrorModel>) ->()) {
+        self.service.call(type: EndpointItem.movieSimiliar(id: id), params: ["api_key": Constant.apiKey], completion: completion)
+    }
+ 
 }

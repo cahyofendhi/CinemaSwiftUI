@@ -10,6 +10,7 @@ import SwiftUI
 struct UpcomingView: View {
     
     let movies: [Movie]
+    @State var tabBar: UITabBar! = nil
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16, content: {
@@ -23,6 +24,7 @@ struct UpcomingView: View {
             if (movies.isEmpty) {
                 EmptyView()
             } else {
+                
                 ACarousel(movies,
                           id: \.self,
                           spacing: 16,
@@ -30,44 +32,48 @@ struct UpcomingView: View {
                           sidesScaling: 0.85,
                           isWrap: false) { item in
                     
-                    ZStack() {
-                        ImageView(withURL: item.getImagePoster(),
-                            mode: .fill)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        
-                        VStack {
-                            Spacer()
-                            HStack {
-                                VStack(alignment: .leading, spacing: 5){
-                                    Text(item.title!)
-                                        .font(.system(size: 14))
-                                        .foregroundColor(.white)
-                                        .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
-                                    Text(item.overview!)
-                                        .font(.system(size: 12))
-                                        .foregroundColor(.white)
-                                        .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
-                                }
-                                .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 5))
+                    NavigationLink(destination: DetailMovieView(tabBar: self.tabBar, movie: item)) {
+                    
+                        ZStack() {
+                            ImageView(withURL: item.getImagePoster(),
+                                mode: .fill)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            
+                            VStack {
                                 Spacer()
-                            }.background(
-                                LinearGradient(
-                                    gradient: Gradient(
-                                        colors: [.gray.opacity(0.5), .black.opacity(0.5)]),
-                                    startPoint: .top, endPoint: .bottom)
-                            )
+                                HStack {
+                                    VStack(alignment: .leading, spacing: 5){
+                                        Text(item.title!)
+                                            .font(.system(size: 14))
+                                            .foregroundColor(.white)
+                                            .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                                        Text(item.overview!)
+                                            .font(.system(size: 12))
+                                            .foregroundColor(.white)
+                                            .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                                    }
+                                    .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 5))
+                                    Spacer()
+                                }.background(
+                                    LinearGradient(
+                                        gradient: Gradient(
+                                            colors: [.gray.opacity(0.5), .black.opacity(0.5)]),
+                                        startPoint: .top, endPoint: .bottom)
+                                )
+                            }
+                            .padding(.bottom, 0)
                         }
-                        .padding(.bottom, 0)
+                        .frame(
+                              minWidth: 0,
+                              maxWidth: .infinity,
+                              minHeight: 0,
+                              maxHeight: .infinity,
+                              alignment: .topLeading
+                            )
+                        .shadow(radius: 10)
+                        .cornerRadius(10)
+                        
                     }
-                    .frame(
-                          minWidth: 0,
-                          maxWidth: .infinity,
-                          minHeight: 0,
-                          maxHeight: .infinity,
-                          alignment: .topLeading
-                        )
-                    .shadow(radius: 10)
-                    .cornerRadius(10)
                 }
                 .frame(height: 150)
             }
