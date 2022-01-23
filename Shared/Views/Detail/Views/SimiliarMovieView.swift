@@ -36,9 +36,9 @@ struct SimiliarMovieView: View {
                         
                             VStack(alignment: .center) {
                             
-                                ImageView(withURL: it.getImagePoster(),
-                                    mode: .fill)
-                                    .aspectRatio(1, contentMode: .fill)
+                                ImageView(url: it.getImagePoster())
+                                    .frame(width:  UIScreen.width / 5, height:  UIScreen.width / 5, alignment: .center)
+                                    .aspectRatio(contentMode: .fill)
                                     .cornerRadius(10)
                                 
                                 Text(it.title ?? "")
@@ -46,6 +46,8 @@ struct SimiliarMovieView: View {
                                     .font(.system(size: 10))
                                     .foregroundColor(.black)
                                     .lineLimit(2)
+                                
+                                Spacer()
 
                             }
                             

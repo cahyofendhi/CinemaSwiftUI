@@ -7,6 +7,7 @@ target 'CinemaSwiftUI (iOS)' do
 
   # Pods for CinemaSwiftUI (iOS)
   pod 'Alamofire', '~> 5.5'
+  pod 'Kingfisher', '~> 7.0'
 
 end
 

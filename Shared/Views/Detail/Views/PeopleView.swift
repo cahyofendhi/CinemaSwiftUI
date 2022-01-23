@@ -30,8 +30,7 @@ struct PeopleView: View {
                         
                         VStack {
                         
-                            ImageView(withURL: it.getImageProfile(),
-                                mode: .fill)
+                            ImageView(url: it.getImageProfile())
                                 .frame(width: UIScreen.width / 4, height: UIScreen.width / 4)
                                 .cornerRadius(10)
 

@@ -30,8 +30,7 @@ struct TopRateMovieView: View {
                         
                         NavigationLink(destination: DetailMovieView(tabBar: self.tabBar, movie: it)) {
                         
-                            ImageView(withURL: it.getImagePoster(),
-                                mode: .fill)
+                            ImageView(url: it.getImagePoster())
                                 .aspectRatio(3/4, contentMode: .fill)
                                 .frame(width: (UIScreen.width / 4))
                                 .cornerRadius(10)

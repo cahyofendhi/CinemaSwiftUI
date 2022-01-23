@@ -31,10 +31,9 @@ struct TVTopRateView: View {
                         Rectangle().fill(Color.white).frame(width: 0)
                         ForEach(movies, id: \.self) { it in
                             VStack(alignment: .leading, spacing: 5, content: {
-                                ImageView(withURL: it.getImagePoster(),
-                                    mode: .fill)
-                                    .frame(maxWidth: .infinity)
-                                    .aspectRatio(3/4, contentMode: .fill)
+                                ImageView(url: it.getImagePoster())
+                                    .frame(width: UIScreen.width / 4, height: (UIScreen.width / 4) * 4/3, alignment: .center)
+                                    .aspectRatio(contentMode: .fill)
                                     .cornerRadius(10)
                                 
                                 Text(it.name ?? "")
@@ -48,6 +47,9 @@ struct TVTopRateView: View {
                                     .font(.system(size: 10))
                                     .foregroundColor(.gray)
                                     .lineLimit(2)
+                                
+                                Spacer()
+                                
                             })
                             .frame(width: UIScreen.width / 4)
                         }

@@ -35,9 +35,9 @@ struct UpcomingView: View {
                     NavigationLink(destination: DetailMovieView(tabBar: self.tabBar, movie: item)) {
                     
                         ZStack() {
-                            ImageView(withURL: item.getImagePoster(),
-                                mode: .fill)
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            ImageView(url: item.getImagePoster())
+                                .aspectRatio(contentMode: .fill)
+                                .frame(height: 150, alignment: .center)
                             
                             VStack {
                                 Spacer()

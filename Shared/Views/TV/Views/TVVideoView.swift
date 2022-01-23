@@ -30,7 +30,7 @@ struct TVVideoView: View {
                     
                     ZStack {
         
-                        ImageView(withURL: it.getImagePoster(), mode: .fill)
+                        ImageView(url: it.getImagePoster())
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .aspectRatio(contentMode: .fill)
                             

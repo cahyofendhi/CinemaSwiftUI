@@ -21,8 +21,8 @@ struct DetailMovieView: View {
             
             
             VStack {
-                ImageView(withURL: viewModel.movie?.getImagePoster() ?? "",
-                    mode: .fill)
+                ImageView(url: viewModel.movie?.getImagePoster() ?? "")
+                    .aspectRatio(contentMode: .fill)
                     .frame(width: UIScreen.width, height: UIScreen.height / 3)
                 Spacer()
             }
@@ -73,8 +73,8 @@ struct DetailMovieView: View {
 
                             Spacer()
 
-                            ImageView(withURL: viewModel.movie?.getImageBackdrop() ?? "",
-                                mode: .fill)
+                            ImageView(url: viewModel.movie?.getImageBackdrop() ?? "")
+                                .aspectRatio(contentMode: .fill)
                                 .frame(width: 100, height: 150)
                                 .cornerRadius(16)
 
