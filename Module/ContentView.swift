@@ -19,14 +19,14 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $tabSelection) {
             HomeView().tabItem {
-                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5, content: {
+                VStack(alignment: .center, spacing: 5, content: {
                     Image("ic_home")
                     Text("Home")
                 })
             }.tag(Tabs.home)
             
             TVView().tabItem {
-                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5, content: {
+                VStack(alignment: .center, spacing: 5, content: {
                     Image("ic_search")
                     Text("Search")
                 })

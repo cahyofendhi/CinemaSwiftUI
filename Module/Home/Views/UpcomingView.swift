@@ -13,17 +13,17 @@ struct UpcomingView: View {
     @State var tabBar: UITabBar!
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16, content: {
-            Text("Upcoming Movie")
-                .font(.system(size: 16))
-                .bold()
-                .foregroundColor(.black)
-                .padding(.leading, 16)
-                .padding(.top, 16)
-            
-            if (movies.isEmpty) {
-                EmptyView()
-            } else {
+        
+        if (movies.isEmpty) {
+            EmptyView()
+        } else {
+            VStack(alignment: .leading, spacing: 16, content: {
+                Text("Upcoming Movie")
+                    .font(.system(size: 16))
+                    .bold()
+                    .foregroundColor(.black)
+                    .padding(.leading, 16)
+                    .padding(.top, 16)
                 
                 ACarousel(movies,
                           id: \.self,
@@ -76,9 +76,9 @@ struct UpcomingView: View {
                     }
                 }
                 .frame(height: ScreenUtil.isIphone() ? 150 : 300)
-            }
-        })
-            
+                
+            })
+        }
     }
 }
 
