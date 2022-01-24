@@ -33,10 +33,10 @@ struct PopularMovieView: View {
                         
                         NavigationLink(destination: DetailMovieView(tabBar: self.tabBar, movie: it)) {
                             VStack(alignment: .leading, spacing: 5, content: {
-                                ImageView(withURL: it.getImagePoster(),
-                                    mode: .fill)
-                                    .frame(maxWidth: .infinity)
-                                    .aspectRatio(3/4, contentMode: .fill)
+                                ImageView(url: it.getImagePoster())
+                                    .frame(width: UIScreen.width / (ScreenUtil.isIphone() ? 3 : 5),
+                                           height: (UIScreen.width / (ScreenUtil.isIphone() ? 3 : 5) - 10) * 4/3)
+                                    .aspectRatio(contentMode: .fill)
                                     .cornerRadius(10)
                                 
                                 Text(it.title ?? "-")
@@ -50,8 +50,11 @@ struct PopularMovieView: View {
                                     .font(.system(size: 10))
                                     .foregroundColor(.gray)
                                     .lineLimit(2)
+                                
+                                Spacer()
+                                
                             })
-                            .frame(width: UIScreen.width / 3)
+                            .frame(width: UIScreen.width / (ScreenUtil.isIphone() ? 3 : 5))
                         }
                         
                     }

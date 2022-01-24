@@ -9,58 +9,87 @@ import SwiftUI
 import Combine
 import Foundation
 
-
 struct ImageView: View {
-    @ObservedObject var imageLoader:ImageLoader
-    @State var image:UIImage = UIImage()
-    var mode: ContentMode = .fit
-
-    init(withURL url:String, mode: ContentMode = .fit) {
-        imageLoader = ImageLoader(url: url)
-        self.mode = mode
+    @ObservedObject var remoteImageModel: RemoteImageModel
+    
+    init(url: String?) {
+        remoteImageModel = RemoteImageModel(imageUrl: url)
     }
-
+    
     var body: some View {
-            GeometryReader { geo in
-                Image(uiImage: image)
-                    .resizable()
-                    .aspectRatio(contentMode: self.mode)
-                    .frame(width: geo.size.width, height: geo.size.height)
-                    .onReceive(imageLoader.didChange) { data in
-                    self.image = UIImage(data: data) ?? UIImage()
-            }
-        }
-    }
-}
-
-class ImageLoader: ObservableObject {
-    var didChange = PassthroughSubject<Data, Never>()
-    var data = Data() {
-        didSet {
-            didChange.send(data)
-        }
-    }
-
-    init(url :String) {
-        guard let url = URL(string: url) else { return }
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data else { return }
-            DispatchQueue.main.async {
-                self.data = data
-            }
-        }
-        task.resume()
-    }
-}
-
-
-struct NetworkImage: View {
-    let url: URL?
-    var body: some View {
-        if let url = url, let imageData = try? Data(contentsOf: url), let uiImage = UIImage(data: imageData) {
-            Image(uiImage: uiImage)
+        if let img = remoteImageModel.displayImage {
+            Image(uiImage: img)
                 .resizable()
-                .scaledToFill()
+                .clipped()
+        } else {
+            Rectangle()
+                .fill(Color.gray.opacity(0.2))
+                .cornerRadius(8)
+                .shadow(radius: 4)
         }
+    }
+}
+
+class RemoteImageModel: ObservableObject {
+    @Published var displayImage: UIImage?
+    var imageUrl: String?
+    var cachedImage = CachedImage.getCachedImage()
+    
+    init(imageUrl: String?) {
+        self.imageUrl = imageUrl
+        if imageFromCache() {
+            return
+        }
+        imageFromRemoteUrl()
+    }
+    
+    
+    func imageFromCache() -> Bool {
+        guard let url = imageUrl, let cacheImage = cachedImage.get(key: url) else {
+            return false
+        }
+        displayImage = cacheImage
+        return true
+    }
+    
+    func imageFromRemoteUrl() {
+        guard let url = imageUrl else {
+            return
+        }
+        
+        if let imageURL = URL(string: url) {
+
+            URLSession.shared.dataTask(with: imageURL, completionHandler: { (data, response, error) in
+                if let data = data {
+                    DispatchQueue.main.async {
+                        guard let remoteImage = UIImage(data: data) else {
+                            return
+                        }
+                        
+                        self.cachedImage.set(key: self.imageUrl!, image: remoteImage)
+                        self.displayImage = remoteImage
+                    }
+                }
+                }).resume()
+        }
+    }
+}
+
+class CachedImage {
+    var cache = NSCache<NSString, UIImage>()
+    
+    func get(key: String) -> UIImage? {
+        return cache.object(forKey: NSString(string: key))
+    }
+    
+    func set(key: String, image: UIImage) {
+        cache.setObject(image, forKey: NSString(string: key))
+    }
+}
+
+extension CachedImage {
+    private static var cachedImage = CachedImage()
+    static func getCachedImage() -> CachedImage {
+        return cachedImage
     }
 }

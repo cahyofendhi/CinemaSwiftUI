@@ -11,7 +11,7 @@ struct ContentView: View {
     
     init() {
         UITabBar.appearance().barTintColor = .white
-        UIToolbar.appearance().barTintColor = UIColor.red
+        UIToolbar.appearance().barTintColor = UIColor.blue
     }
     
     @State var tabSelection: Tabs = .home
@@ -32,7 +32,7 @@ struct ContentView: View {
                 })
             }.tag(Tabs.tv)
         }
-        .accentColor(.red)
+        .accentColor(.blue)
     }
     
     enum Tabs {

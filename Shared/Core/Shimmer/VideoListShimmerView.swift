@@ -1,20 +1,19 @@
 //
-//  TVVideoView.swift
+//  VideoListShimmerView.swift
 //  CinemaSwiftUI (iOS)
 //
-//  Created by Dot Indonesia on 25/11/21.
+//  Created by Dot Indonesia on 24/01/22.
 //
+
+import Foundation
 
 import SwiftUI
 
-struct TVVideoView: View {
-    
-    let movies: [Movie]
-    @State var tabBar: UITabBar! = nil
+struct VideoListShimmerView: View {
     
     var body: some View {
         
-        Text("On Air")
+        Text("Title Movie")
             .font(.system(size: 14))
             .bold()
             .foregroundColor(.black)
@@ -26,11 +25,11 @@ struct TVVideoView: View {
                 
                 Rectangle().fill(Color.white).frame(width: 0)
                 
-                ForEach(movies, id: \.self) { it in
+                ForEach([0, 1, 2, 3, 4, 5], id: \.self) { it in
                     
                     ZStack {
         
-                        ImageView(url: it.getImagePoster())
+                        Rectangle()
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .aspectRatio(contentMode: .fill)
                             
@@ -53,16 +52,10 @@ struct TVVideoView: View {
                 
             })
             .frame(maxWidth: .infinity)
-            
-            
         })
+        .redacted(reason: .placeholder)
+        .shimmering()
         
     }
     
-}
-
-struct TVVideoView_Previews: PreviewProvider {
-    static var previews: some View {
-        TVVideoView(movies: [])
-    }
 }

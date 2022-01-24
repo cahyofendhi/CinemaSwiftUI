@@ -20,16 +20,37 @@ struct HomeView: View {
         NavigationView {
             
             NoSepratorList {
-                UpcomingView(movies: viewModel.upcomingMovies ?? [], tabBar: self.tabBar)
-                    .hideRowSeparator()
-
-                PopularMovieView(movies: viewModel.popularMovies ?? [], tabBar: self.tabBar)
-                    .hideRowSeparator()
-                    .padding(.top, 16)
                 
-                TopRateMovieView(movies: viewModel.topMovies ?? [], tabBar: self.tabBar)
+                if (viewModel.loadingUpcoming ?? true) {
+                    Rectangle()
+                        .foregroundColor(.gray.opacity(0.3))
+                        .cornerRadius(10, antialiased: true)
+                        .frame(width: UIScreen.width - 32,
+                               height: ScreenUtil.isIphone() ? 150 : 300,
+                               alignment: .center)
+                        .padding(.top, 20)
+                        .redacted(reason: .placeholder)
+                } else {
+                    UpcomingView(movies: viewModel.upcomingMovies ?? [],
+                                 tabBar: self.tabBar)
+                    .hideRowSeparator()
+                }
+                
+                if (viewModel.loadingPopular ?? true) {
+                    HListShimmerView()
+                } else {
+                    PopularMovieView(movies: viewModel.popularMovies ?? [], tabBar: self.tabBar)
+                        .hideRowSeparator()
+                        .padding(.top, 16)
+                }
+                
+                if (viewModel.loadingTop ?? true) {
+                    VListShimmerView()
+                } else {
+                    TopRateMovieView(movies: viewModel.topMovies ?? [], tabBar: self.tabBar)
                     .hideRowSeparator()
                     .padding(.top, 16)
+                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
@@ -45,6 +66,7 @@ struct HomeView: View {
             }
             
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .background(TabBarAccessor { tabbar in
             self.tabBar = tabbar
         })

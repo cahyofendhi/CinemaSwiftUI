@@ -30,9 +30,9 @@ struct PeopleView: View {
                         
                         VStack {
                         
-                            ImageView(withURL: it.getImageProfile(),
-                                mode: .fill)
-                                .frame(width: UIScreen.width / 4, height: UIScreen.width / 4)
+                            ImageView(url: it.getImageProfile())
+                                .aspectRatio(1, contentMode: .fill)
+                                .frame(width: UIScreen.width / (ScreenUtil.isIphone() ? 5 : 7))
                                 .cornerRadius(10)
 
                             Text(it.name ?? "")
@@ -42,7 +42,7 @@ struct PeopleView: View {
                                 .lineLimit(2)
                                 
                         }
-                        .frame(width: UIScreen.width / 4)
+                        .frame(width: UIScreen.width / (ScreenUtil.isIphone() ? 5 : 7))
                     }
                     
                     Rectangle().fill(Color.white).frame(width: 0)
