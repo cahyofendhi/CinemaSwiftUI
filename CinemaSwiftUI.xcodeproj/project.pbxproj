@@ -192,6 +192,53 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8E2C8C25279E827E001B38AD /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				8EDAD51C274D2761002AEACF /* CinemaSwiftUIApp.swift */,
+				8EDAD51D274D2761002AEACF /* ContentView.swift */,
+				8E3C4DDD274FD1D50089009C /* Detail */,
+				8EDAD55B274D2ACA002AEACF /* TV */,
+				8EDAD55A274D2AC2002AEACF /* Home */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		8E2C8C27279E835A001B38AD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8E4FAB9A27966B71005C49F1 /* Models */,
+				8E4FAB99279650CA005C49F1 /* Repositories */,
+				8EAF1BEB2761E8BA0082381D /* Data */,
+				8EAF1BEA2761E8AC0082381D /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8E2C8C2A279E83FA001B38AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8EAF1BEF2761FABC0082381D /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8E2C8C2B279E8409001B38AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8EF44C4F2797B54D00AB9E9C /* TvViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8E2C8C2C279E8415001B38AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8E69E89527993F4A00D1AFE8 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		8E3AFCEA274F7665007ECE00 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +251,7 @@
 		8E3C4DDD274FD1D50089009C /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				8E2C8C2C279E8415001B38AD /* ViewModel */,
 				8E5EF2F327573614002EC872 /* Views */,
 				8E3C4DDE274FD1EE0089009C /* DetailMovieView.swift */,
 			);
@@ -305,16 +353,6 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		8EAF1BEE2761FAA30082381D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				8EAF1BEF2761FABC0082381D /* HomeViewModel.swift */,
-				8EF44C4F2797B54D00AB9E9C /* TvViewModel.swift */,
-				8E69E89527993F4A00D1AFE8 /* DetailViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		8EBF9F9B279E2A2A00ECDEFE /* Shimmer */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +367,8 @@
 		8EDAD516274D2761002AEACF = {
 			isa = PBXGroup;
 			children = (
+				8E2C8C27279E835A001B38AD /* Core */,
+				8E2C8C25279E827E001B38AD /* Module */,
 				8EDAD51B274D2761002AEACF /* Shared */,
 				8EDAD525274D2761002AEACF /* iOS */,
 				8EDAD52C274D2761002AEACF /* macOS */,
@@ -345,16 +385,8 @@
 			children = (
 				8EF44C542797BE7800AB9E9C /* Extension */,
 				8EF44C512797B92B00AB9E9C /* Helper */,
-				8E4FAB9A27966B71005C49F1 /* Models */,
-				8E4FAB99279650CA005C49F1 /* Repositories */,
-				8EAF1BEE2761FAA30082381D /* ViewModel */,
-				8EAF1BEB2761E8BA0082381D /* Data */,
-				8EAF1BEA2761E8AC0082381D /* Network */,
 				8EDAD562274D383E002AEACF /* Libs */,
-				8EDAD55C274D2AD2002AEACF /* Core */,
-				8EDAD559274D2AB6002AEACF /* Views */,
-				8EDAD51C274D2761002AEACF /* CinemaSwiftUIApp.swift */,
-				8EDAD51D274D2761002AEACF /* ContentView.swift */,
+				8EDAD55C274D2AD2002AEACF /* Views */,
 				8EDAD51E274D2761002AEACF /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -406,19 +438,10 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
-		8EDAD559274D2AB6002AEACF /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8E3C4DDD274FD1D50089009C /* Detail */,
-				8EDAD55B274D2ACA002AEACF /* TV */,
-				8EDAD55A274D2AC2002AEACF /* Home */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		8EDAD55A274D2AC2002AEACF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8E2C8C2A279E83FA001B38AD /* ViewModel */,
 				8EDAD55F274D36D5002AEACF /* Views */,
 				8EDAD55D274D2F1D002AEACF /* HomeView.swift */,
 			);
@@ -428,13 +451,14 @@
 		8EDAD55B274D2ACA002AEACF /* TV */ = {
 			isa = PBXGroup;
 			children = (
+				8E2C8C2B279E8409001B38AD /* ViewModel */,
 				8E3AFCEA274F7665007ECE00 /* Views */,
 				8E3AFCE8274F734E007ECE00 /* TVView.swift */,
 			);
 			path = TV;
 			sourceTree = "<group>";
 		};
-		8EDAD55C274D2AD2002AEACF /* Core */ = {
+		8EDAD55C274D2AD2002AEACF /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				8EBF9F9B279E2A2A00ECDEFE /* Shimmer */,
@@ -446,7 +470,7 @@
 				8EF4401F274E2DBF009FCD69 /* Image */,
 				8EF4401C274E2A9D009FCD69 /* extension */,
 			);
-			path = Core;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8EDAD55F274D36D5002AEACF /* Views */ = {
