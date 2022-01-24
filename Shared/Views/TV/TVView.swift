@@ -39,16 +39,26 @@ struct TVView: View {
                 }
                 .hideRowSeparator()
                 
-                TVVideoView(movies: viewModel.onAirMovies ?? [], tabBar: self.tabBar)
+                if (viewModel.loadingOnAir ?? true) {
+                    VideoListShimmerView()
+                } else {
+                    TVVideoView(movies: viewModel.onAirMovies ?? [], tabBar: self.tabBar)
                     .hideRowSeparator()
+                }
                 
-                TVTopRateView(movies: viewModel.popularMovies ?? [], title: "Popular", tabBar: self.tabBar)
-                    .hideRowSeparator()
-                    .padding(.top, 16)
+                if (viewModel.loadingPopular ?? true) {
+                    HListShimmerView()
+                } else {
+                    TVTopRateView(movies: viewModel.popularMovies ?? [], title: "Popular", tabBar: self.tabBar)
+                        .hideRowSeparator()
+                }
                 
-                TVTopRateView(movies: viewModel.topMovies ?? [], title: "Top Rate", tabBar: self.tabBar)
-                    .hideRowSeparator()
-                    .padding(.top, 16)
+                if (viewModel.loadingTop ?? true) {
+                    HListShimmerView()
+                } else {
+                    TVTopRateView(movies: viewModel.topMovies ?? [], title: "Top Rate", tabBar: self.tabBar)
+                        .hideRowSeparator()
+                }
                 
             }
             .listRowBackground(Color.white)

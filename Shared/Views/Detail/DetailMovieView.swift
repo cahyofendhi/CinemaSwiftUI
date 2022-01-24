@@ -105,7 +105,7 @@ struct DetailMovieView: View {
 
                     SimiliarMovieView(movies: viewModel.similiar, tabBar: self.tabBar)
                         .background(Color.white)
-                        .padding(.top, -20)
+                        .padding(.top, -30)
                         
                     Spacer()
                     

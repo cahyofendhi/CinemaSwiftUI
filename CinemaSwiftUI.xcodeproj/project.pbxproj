@@ -32,6 +32,10 @@
 		8EAC80EA2754826600C01FAC /* NoSeparatorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC80E92754826600C01FAC /* NoSeparatorList.swift */; };
 		8EAF1BED2761E8CA0082381D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF1BEC2761E8CA0082381D /* Constant.swift */; };
 		8EAF1BF02761FABC0082381D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF1BEF2761FABC0082381D /* HomeViewModel.swift */; };
+		8EBF9F9D279E2A5400ECDEFE /* HListShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF9F9C279E2A5400ECDEFE /* HListShimmerView.swift */; };
+		8EBF9F9F279E2C1F00ECDEFE /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF9F9E279E2C1F00ECDEFE /* Shimmer.swift */; };
+		8EBF9FA3279E3B4800ECDEFE /* VListShimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF9FA2279E3B4800ECDEFE /* VListShimerView.swift */; };
+		8EBF9FA5279E493E00ECDEFE /* VideoListShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF9FA4279E493E00ECDEFE /* VideoListShimmerView.swift */; };
 		8ECDF57A2759087E00DB6DAC /* SimiliarMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDF5792759087E00DB6DAC /* SimiliarMovieView.swift */; };
 		8EDAD538274D2761002AEACF /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD537274D2761002AEACF /* Tests_iOS.swift */; };
 		8EDAD543274D2761002AEACF /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDAD542274D2761002AEACF /* Tests_macOS.swift */; };
@@ -105,6 +109,10 @@
 		8EAC80E92754826600C01FAC /* NoSeparatorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSeparatorList.swift; sourceTree = "<group>"; };
 		8EAF1BEC2761E8CA0082381D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		8EAF1BEF2761FABC0082381D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8EBF9F9C279E2A5400ECDEFE /* HListShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HListShimmerView.swift; sourceTree = "<group>"; };
+		8EBF9F9E279E2C1F00ECDEFE /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
+		8EBF9FA2279E3B4800ECDEFE /* VListShimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VListShimerView.swift; sourceTree = "<group>"; };
+		8EBF9FA4279E493E00ECDEFE /* VideoListShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListShimmerView.swift; sourceTree = "<group>"; };
 		8ECDF5792759087E00DB6DAC /* SimiliarMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimiliarMovieView.swift; sourceTree = "<group>"; };
 		8EDAD51C274D2761002AEACF /* CinemaSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaSwiftUIApp.swift; sourceTree = "<group>"; };
 		8EDAD51D274D2761002AEACF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -305,6 +313,17 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		8EBF9F9B279E2A2A00ECDEFE /* Shimmer */ = {
+			isa = PBXGroup;
+			children = (
+				8EBF9F9C279E2A5400ECDEFE /* HListShimmerView.swift */,
+				8EBF9F9E279E2C1F00ECDEFE /* Shimmer.swift */,
+				8EBF9FA2279E3B4800ECDEFE /* VListShimerView.swift */,
+				8EBF9FA4279E493E00ECDEFE /* VideoListShimmerView.swift */,
+			);
+			path = Shimmer;
+			sourceTree = "<group>";
+		};
 		8EDAD516274D2761002AEACF = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +435,7 @@
 		8EDAD55C274D2AD2002AEACF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8EBF9F9B279E2A2A00ECDEFE /* Shimmer */,
 				8E5EF2F027572AA3002EC872 /* FlowLayout */,
 				8E5EF2EA2756FEBA002EC872 /* Card */,
 				8EAC80E82754825000C01FAC /* List */,
@@ -724,16 +744,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBF9FA5279E493E00ECDEFE /* VideoListShimmerView.swift in Sources */,
 				8E5EF2EC2756FED3002EC872 /* CornerRadiusStyle.swift in Sources */,
 				8EDAD577274D3BFF002AEACF /* ACarouselAutoScroll.swift in Sources */,
 				8EAC80DF27546B1C00C01FAC /* TabBarAccessor.swift in Sources */,
 				8ECDF57A2759087E00DB6DAC /* SimiliarMovieView.swift in Sources */,
+				8EBF9F9F279E2C1F00ECDEFE /* Shimmer.swift in Sources */,
 				8EAC80E527547C8C00C01FAC /* CustomNavigationStyle.swift in Sources */,
 				8E5EF2F5275736F7002EC872 /* StatusDescriptionView.swift in Sources */,
 				8E4FAB9C27966B81005C49F1 /* MovieModel.swift in Sources */,
 				8EDAD57B274D3BFF002AEACF /* AppLifeCycleModifier.swift in Sources */,
 				8EAF1BED2761E8CA0082381D /* Constant.swift in Sources */,
 				8E5EF2EF27572A1B002EC872 /* FlexibleView.swift in Sources */,
+				8EBF9F9D279E2A5400ECDEFE /* HListShimmerView.swift in Sources */,
 				8E647A0A279A5643000715B5 /* PeopleModel.swift in Sources */,
 				8E5EF2F727575100002EC872 /* PeopleView.swift in Sources */,
 				8E1DFD4C2795B8AE00FAA8A5 /* EndpointItem.swift in Sources */,
@@ -744,6 +767,7 @@
 				8E3C4DDF274FD1EE0089009C /* DetailMovieView.swift in Sources */,
 				8EAF1BF02761FABC0082381D /* HomeViewModel.swift in Sources */,
 				8E4FAB9E27967652005C49F1 /* MovieRepository.swift in Sources */,
+				8EBF9FA3279E3B4800ECDEFE /* VListShimerView.swift in Sources */,
 				8E1DFD4A2795B69500FAA8A5 /* EndPointType.swift in Sources */,
 				8EAC80EA2754826600C01FAC /* NoSeparatorList.swift in Sources */,
 				8EF44C532797B94200AB9E9C /* DatesFormater.swift in Sources */,
