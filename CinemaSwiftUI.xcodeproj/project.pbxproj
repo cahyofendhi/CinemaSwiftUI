@@ -63,6 +63,8 @@
 		8EFFE63D274E87D3007F3479 /* ScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFE63C274E87D3007F3479 /* ScreenExtension.swift */; };
 		8EFFE63F274E90B5007F3479 /* TopRateMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFE63E274E90B5007F3479 /* TopRateMovieView.swift */; };
 		F65399A422D2BD156F5CE48C /* Pods_CinemaSwiftUI__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15381FC92728565A16120DBD /* Pods_CinemaSwiftUI__iOS_.framework */; };
+		F9356AF7279EE6510042632B /* FormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9356AF6279EE6510042632B /* FormValidation.swift */; };
+		F9356AFA279EE7B20042632B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9356AF9279EE7B20042632B /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +151,8 @@
 		8EFFE63C274E87D3007F3479 /* ScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenExtension.swift; sourceTree = "<group>"; };
 		8EFFE63E274E90B5007F3479 /* TopRateMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRateMovieView.swift; sourceTree = "<group>"; };
 		DB95DF0A44748FD83BC943FE /* Pods_CinemaSwiftUI__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CinemaSwiftUI__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9356AF6279EE6510042632B /* FormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidation.swift; sourceTree = "<group>"; };
+		F9356AF9279EE7B20042632B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +251,7 @@
 		8E2C8C2D279E8B92001B38AD /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				F9356AF8279EE79D0042632B /* ViewModel */,
 				8E2C8C2E279E8BA9001B38AD /* LoginView.swift */,
 			);
 			path = Auth;
@@ -546,6 +551,7 @@
 		8EF44C512797B92B00AB9E9C /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				F9356AF5279EE62B0042632B /* Validator */,
 				8EF44C522797B94200AB9E9C /* DatesFormater.swift */,
 				8E08F3BE279E626C00AD74AB /* ScreenUtil.swift */,
 			);
@@ -567,6 +573,22 @@
 				DB95DF0A44748FD83BC943FE /* Pods_CinemaSwiftUI__macOS_.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9356AF5279EE62B0042632B /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				F9356AF6279EE6510042632B /* FormValidation.swift */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
+		F9356AF8279EE79D0042632B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F9356AF9279EE7B20042632B /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -799,6 +821,7 @@
 				8EAC80DF27546B1C00C01FAC /* TabBarAccessor.swift in Sources */,
 				8ECDF57A2759087E00DB6DAC /* SimiliarMovieView.swift in Sources */,
 				8EBF9F9F279E2C1F00ECDEFE /* Shimmer.swift in Sources */,
+				F9356AF7279EE6510042632B /* FormValidation.swift in Sources */,
 				8EAC80E527547C8C00C01FAC /* CustomNavigationStyle.swift in Sources */,
 				8E5EF2F5275736F7002EC872 /* StatusDescriptionView.swift in Sources */,
 				8E4FAB9C27966B81005C49F1 /* MovieModel.swift in Sources */,
@@ -830,6 +853,7 @@
 				8E3AFCE9274F734E007ECE00 /* TVView.swift in Sources */,
 				8E2C8C2F279E8BA9001B38AD /* LoginView.swift in Sources */,
 				8E3AFCEE274F8045007ECE00 /* TVVideoView.swift in Sources */,
+				F9356AFA279EE7B20042632B /* LoginViewModel.swift in Sources */,
 				8E2C8C32279E946D001B38AD /* PasswordField.swift in Sources */,
 				8EFFE63B274E85E8007F3479 /* PopularMovieView.swift in Sources */,
 				8EDAD561274D36E5002AEACF /* UpcomingView.swift in Sources */,

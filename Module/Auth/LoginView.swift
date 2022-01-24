@@ -9,10 +9,9 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @State private var email: String = ""
-    @State private var password: String = ""
-    
     @Binding var isLoggedin: Bool
+    
+    @ObservedObject private var viewmodel = LoginViewModel()
     
     var body: some View {
     
@@ -23,13 +22,19 @@ struct LoginView: View {
                     .font(.title)
                     .foregroundColor(Color.black)
                 
-                TextField("Username or Email",text:self.$email)
+                TextField("Username or Email",text: .init(
+                    get: { [viewmodel] in viewmodel.state.email },
+                    set: { [viewmodel] in viewmodel.updateEmail($0) }
+                ))
                     .autocapitalization(.none)
                     .padding(EdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12))
                     .background(RoundedRectangle(cornerRadius:6).stroke(Color.blue.opacity(0.7),lineWidth:2))
                     .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
                 
-                PasswordField(title: "Password", value: $password)
+                PasswordField(title: "Password", value: .init(
+                    get: { [viewmodel] in viewmodel.state.password },
+                    set: { [viewmodel] in viewmodel.updatePassword($0) }
+                ))
                     .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
                 
                 Button(action: {
@@ -41,11 +46,12 @@ struct LoginView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .frame(height: 50, alignment: .center)
-                .background(Color.blue)
+                .background(viewmodel.state.isButtonEnabled ? Color.blue : Color.blue.opacity(0.5))
                 .cornerRadius(10)
                 .padding(.top, 50)
                 .padding(.leading, 16)
                 .padding(.trailing, 16)
+                .disabled(!viewmodel.state.isButtonEnabled)
                 
                 Spacer()
                     
