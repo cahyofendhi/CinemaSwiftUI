@@ -69,6 +69,7 @@ struct TVView: View {
                 self.tabBar?.isHidden = false
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .background(TabBarAccessor { tabbar in
             self.tabBar = tabbar
         })

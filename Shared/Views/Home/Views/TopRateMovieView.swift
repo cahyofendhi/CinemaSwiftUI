@@ -32,7 +32,7 @@ struct TopRateMovieView: View {
                         
                             ImageView(url: it.getImagePoster())
                                 .aspectRatio(3/4, contentMode: .fill)
-                                .frame(width: (UIScreen.width / 4))
+                                .frame(width: (UIScreen.width / (ScreenUtil.isIphone() ? 4 : 6)))
                                 .cornerRadius(10)
                             
                             VStack(alignment: .leading, spacing: 5, content: {
@@ -55,6 +55,8 @@ struct TopRateMovieView: View {
                                 Text(DateFormat.convertStringDate(it.releaseDate ?? ""))
                                     .font(.system(size: 12))
                                     .foregroundColor(.gray)
+                                
+                                Spacer()
                             })
                             
                             Spacer()

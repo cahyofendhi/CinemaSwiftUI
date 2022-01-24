@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3695B4B336B53FEC1B189061 /* Pods_CinemaSwiftUI__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB95DF0A44748FD83BC943FE /* Pods_CinemaSwiftUI__macOS_.framework */; };
+		8E08F3BF279E626C00AD74AB /* ScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E08F3BE279E626C00AD74AB /* ScreenUtil.swift */; };
 		8E1D36FF279903AE000F6217 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1D36FE279903AE000F6217 /* DoubleExtension.swift */; };
 		8E1DFD4A2795B69500FAA8A5 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1DFD492795B69500FAA8A5 /* EndPointType.swift */; };
 		8E1DFD4C2795B8AE00FAA8A5 /* EndpointItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1DFD4B2795B8AE00FAA8A5 /* EndpointItem.swift */; };
@@ -85,6 +86,7 @@
 		1BCB5650E9B699CE58170A01 /* Pods-CinemaSwiftUI (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemaSwiftUI (macOS).debug.xcconfig"; path = "Target Support Files/Pods-CinemaSwiftUI (macOS)/Pods-CinemaSwiftUI (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		232F2A8F2299C7F891CA39A6 /* Pods-CinemaSwiftUI (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemaSwiftUI (macOS).release.xcconfig"; path = "Target Support Files/Pods-CinemaSwiftUI (macOS)/Pods-CinemaSwiftUI (macOS).release.xcconfig"; sourceTree = "<group>"; };
 		4820C6B1DFC64DBADD6DC1BD /* Pods-CinemaSwiftUI (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemaSwiftUI (iOS).release.xcconfig"; path = "Target Support Files/Pods-CinemaSwiftUI (iOS)/Pods-CinemaSwiftUI (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		8E08F3BE279E626C00AD74AB /* ScreenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtil.swift; sourceTree = "<group>"; };
 		8E1D36FE279903AE000F6217 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		8E1DFD492795B69500FAA8A5 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		8E1DFD4B2795B8AE00FAA8A5 /* EndpointItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointItem.swift; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 			isa = PBXGroup;
 			children = (
 				8EF44C522797B94200AB9E9C /* DatesFormater.swift */,
+				8E08F3BE279E626C00AD74AB /* ScreenUtil.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 				8EF44C532797B94200AB9E9C /* DatesFormater.swift in Sources */,
 				8E69E89627993F4A00D1AFE8 /* DetailViewModel.swift in Sources */,
 				8EF44021274E2DCE009FCD69 /* ImageView.swift in Sources */,
+				8E08F3BF279E626C00AD74AB /* ScreenUtil.swift in Sources */,
 				8EF44C502797B54D00AB9E9C /* TvViewModel.swift in Sources */,
 				8EF4401E274E2AB8009FCD69 /* ViewExtension.swift in Sources */,
 				8EDAD578274D3BFF002AEACF /* View+ReceiveTimer.swift in Sources */,

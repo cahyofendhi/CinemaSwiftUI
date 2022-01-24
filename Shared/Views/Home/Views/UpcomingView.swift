@@ -10,7 +10,7 @@ import SwiftUI
 struct UpcomingView: View {
     
     let movies: [Movie]
-    @State var tabBar: UITabBar! = nil
+    @State var tabBar: UITabBar!
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16, content: {
@@ -64,18 +64,18 @@ struct UpcomingView: View {
                             .padding(.bottom, 0)
                         }
                         .frame(
-                              minWidth: 0,
-                              maxWidth: .infinity,
-                              minHeight: 0,
-                              maxHeight: .infinity,
-                              alignment: .topLeading
-                            )
+                            minWidth: 0,
+                            maxWidth: .infinity,
+                            minHeight: 0,
+                            maxHeight: .infinity,
+                            alignment: .topLeading
+                        )
                         .shadow(radius: 10)
                         .cornerRadius(10)
                         
                     }
                 }
-                .frame(height: 150)
+                .frame(height: ScreenUtil.isIphone() ? 150 : 300)
             }
         })
             

@@ -43,7 +43,8 @@ struct TVVideoView: View {
                         
                         
                     }
-                    .frame(width: UIScreen.width / 3, height: (UIScreen.width / 3) / 2)
+                    .frame(width: UIScreen.width / (ScreenUtil.isIphone() ? 3 : 5),
+                           height: (UIScreen.width / (ScreenUtil.isIphone() ? 3 : 5)) / 2)
                     .cornerRadius(10)
                     
                 }

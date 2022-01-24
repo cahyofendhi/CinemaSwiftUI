@@ -23,7 +23,8 @@ struct DetailMovieView: View {
             VStack {
                 ImageView(url: viewModel.movie?.getImagePoster() ?? "")
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: UIScreen.width, height: UIScreen.height / 3)
+                    .frame(width: UIScreen.width,
+                           height: UIScreen.height / 3)
                 Spacer()
             }
             
@@ -31,7 +32,10 @@ struct DetailMovieView: View {
                 
                 VStack {
 
-                    Rectangle().frame(width: 0, height: UIScreen.width / 1.8, alignment: .top).accentColor(Color.red)
+                    Rectangle().frame(width: 0,
+                                      height: UIScreen.width / (ScreenUtil.isIphone() ? 1.8 : 3),
+                                      alignment: .top)
+                        .accentColor(Color.red)
 
                     Rectangle()
                         .fill(Color.white)
@@ -74,8 +78,8 @@ struct DetailMovieView: View {
                             Spacer()
 
                             ImageView(url: viewModel.movie?.getImageBackdrop() ?? "")
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 100, height: 150)
+                                .aspectRatio(3/4, contentMode: .fit)
+                                .frame(width: ScreenUtil.isIphone() ? 100 : 150)
                                 .cornerRadius(16)
 
                         }

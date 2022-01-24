@@ -33,7 +33,8 @@ struct HListShimmerView: View {
                                 .foregroundColor(.gray)
                                 .accentColor(.gray)
                                 .background(Color.gray)
-                                .frame(width: UIScreen.width / 3, height: (UIScreen.width / 3 - 10) * 4/3)
+                                .frame(width: UIScreen.width / (ScreenUtil.isIphone() ? 3 : 5),
+                                       height: (UIScreen.width / (ScreenUtil.isIphone() ? 3 : 5) - 10) * 4/3)
                                 .cornerRadius(10)
                                 
                             
@@ -52,7 +53,7 @@ struct HListShimmerView: View {
                             Spacer()
                             
                         })
-                        .frame(width: UIScreen.width / 3)
+                        .frame(width: UIScreen.width / (ScreenUtil.isIphone() ? 3 : 5))
                         
                         
                     }

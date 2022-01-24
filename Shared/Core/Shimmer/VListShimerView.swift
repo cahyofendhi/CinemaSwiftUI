@@ -28,7 +28,7 @@ struct VListShimmerView: View {
                         
                             Rectangle()
                                 .aspectRatio(3/4, contentMode: .fill)
-                                .frame(width: (UIScreen.width / 4))
+                                .frame(width: (UIScreen.width / (ScreenUtil.isIphone() ? 4 : 6)))
                                 .cornerRadius(10)
                             
                             VStack(alignment: .leading, spacing: 5, content: {

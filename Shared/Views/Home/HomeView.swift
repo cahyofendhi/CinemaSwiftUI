@@ -25,11 +25,14 @@ struct HomeView: View {
                     Rectangle()
                         .foregroundColor(.gray.opacity(0.3))
                         .cornerRadius(10, antialiased: true)
-                        .frame(width: UIScreen.width - 32, height: 150, alignment: .center)
+                        .frame(width: UIScreen.width - 32,
+                               height: ScreenUtil.isIphone() ? 150 : 300,
+                               alignment: .center)
                         .padding(.top, 20)
                         .redacted(reason: .placeholder)
                 } else {
-                    UpcomingView(movies: viewModel.upcomingMovies ?? [], tabBar: self.tabBar)
+                    UpcomingView(movies: viewModel.upcomingMovies ?? [],
+                                 tabBar: self.tabBar)
                     .hideRowSeparator()
                 }
                 
@@ -63,6 +66,7 @@ struct HomeView: View {
             }
             
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .background(TabBarAccessor { tabbar in
             self.tabBar = tabbar
         })

@@ -34,7 +34,8 @@ struct PopularMovieView: View {
                         NavigationLink(destination: DetailMovieView(tabBar: self.tabBar, movie: it)) {
                             VStack(alignment: .leading, spacing: 5, content: {
                                 ImageView(url: it.getImagePoster())
-                                    .frame(width: UIScreen.width / 3, height: (UIScreen.width / 3 - 10) * 4/3)
+                                    .frame(width: UIScreen.width / (ScreenUtil.isIphone() ? 3 : 5),
+                                           height: (UIScreen.width / (ScreenUtil.isIphone() ? 3 : 5) - 10) * 4/3)
                                     .aspectRatio(contentMode: .fill)
                                     .cornerRadius(10)
                                 
@@ -53,7 +54,7 @@ struct PopularMovieView: View {
                                 Spacer()
                                 
                             })
-                            .frame(width: UIScreen.width / 3)
+                            .frame(width: UIScreen.width / (ScreenUtil.isIphone() ? 3 : 5))
                         }
                         
                     }

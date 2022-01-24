@@ -22,12 +22,21 @@ struct SimiliarMovieView: View {
                 .foregroundColor(Color.black)
             
             
-            LazyVGrid(columns: [
-                GridItem(.flexible()),
-                GridItem(.flexible()),
-                GridItem(.flexible()),
-                GridItem(.flexible())
-            ], alignment: .leading, spacing: 16) {
+            LazyVGrid(columns: ScreenUtil.isIphone() ?
+                        [
+                            GridItem(.flexible()),
+                            GridItem(.flexible()),
+                            GridItem(.flexible()),
+                            GridItem(.flexible())
+                        ]: [
+                            GridItem(.flexible()),
+                            GridItem(.flexible()),
+                            GridItem(.flexible()),
+                            GridItem(.flexible()),
+                            GridItem(.flexible()),
+                            GridItem(.flexible())
+                        ],
+                      alignment: .leading, spacing: 16) {
                 
                 ForEach(movies ?? [], id: \.self) { it in
                     
@@ -36,7 +45,9 @@ struct SimiliarMovieView: View {
                         VStack(alignment: .center) {
                         
                             ImageView(url: it.getImagePoster())
-                                .frame(width:  UIScreen.width / 5, height:  UIScreen.width / 5, alignment: .center)
+                                .frame(width:  UIScreen.width / (ScreenUtil.isIphone() ? 5 : 7),
+                                       height:  UIScreen.width / (ScreenUtil.isIphone() ? 5 : 7),
+                                       alignment: .center)
                                 .aspectRatio(contentMode: .fill)
                                 .cornerRadius(10)
                             

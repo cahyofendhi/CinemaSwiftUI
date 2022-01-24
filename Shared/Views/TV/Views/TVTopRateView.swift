@@ -32,7 +32,8 @@ struct TVTopRateView: View {
                         ForEach(movies, id: \.self) { it in
                             VStack(alignment: .leading, spacing: 5, content: {
                                 ImageView(url: it.getImagePoster())
-                                    .frame(width: UIScreen.width / 4, height: (UIScreen.width / 4) * 4/3, alignment: .center)
+                                    .frame(width: UIScreen.width / (ScreenUtil.isIphone() ? 4 : 6),
+                                           height: (UIScreen.width / (ScreenUtil.isIphone() ? 4 : 6)) * 4/3, alignment: .center)
                                     .aspectRatio(contentMode: .fill)
                                     .cornerRadius(10)
                                 
@@ -51,7 +52,7 @@ struct TVTopRateView: View {
                                 Spacer()
                                 
                             })
-                            .frame(width: UIScreen.width / 4)
+                            .frame(width: UIScreen.width / (ScreenUtil.isIphone() ? 4 : 6))
                         }
                         Rectangle().fill(Color.white).frame(width: 0)
                     })
