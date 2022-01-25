@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.5.0)
+  - AlertToast (1.3.7)
   - Kingfisher (7.1.2)
 
 DEPENDENCIES:
   - Alamofire (~> 5.5)
+  - AlertToast
   - Kingfisher (~> 7.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AlertToast
     - Kingfisher
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  AlertToast: 8c9d5efb2df6ea728b32b62bce99d876ec3e5393
   Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
 
-PODFILE CHECKSUM: 40a30c350d9a7c7c324c239de6d98ad2acfb3aec
+PODFILE CHECKSUM: b09bc1f1f5b0676d63f87c9a65822fe7bdf18b23
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.0

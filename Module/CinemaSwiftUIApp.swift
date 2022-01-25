@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct CinemaSwiftUIApp: App {
+    
+    @State var isLoggedin: Bool = false
+        
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isLoggedin {
+                ContentView()
+            } else {
+                LoginView(isLoggedin: $isLoggedin)
+            }
         }
     }
 }
