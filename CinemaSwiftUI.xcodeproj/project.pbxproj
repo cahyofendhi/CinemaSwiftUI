@@ -65,6 +65,7 @@
 		F65399A422D2BD156F5CE48C /* Pods_CinemaSwiftUI__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15381FC92728565A16120DBD /* Pods_CinemaSwiftUI__iOS_.framework */; };
 		F9356AF7279EE6510042632B /* FormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9356AF6279EE6510042632B /* FormValidation.swift */; };
 		F9356AFA279EE7B20042632B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9356AF9279EE7B20042632B /* LoginViewModel.swift */; };
+		F9356AFD279EF16E0042632B /* CustomeDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9356AFC279EF16E0042632B /* CustomeDialog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		DB95DF0A44748FD83BC943FE /* Pods_CinemaSwiftUI__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CinemaSwiftUI__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9356AF6279EE6510042632B /* FormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidation.swift; sourceTree = "<group>"; };
 		F9356AF9279EE7B20042632B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F9356AFC279EF16E0042632B /* CustomeDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeDialog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 		8E2C8C25279E827E001B38AD /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				F966178F279F8E6F00B46BF2 /* Base */,
 				8E2C8C2D279E8B92001B38AD /* Auth */,
 				8EDAD51C274D2761002AEACF /* CinemaSwiftUIApp.swift */,
 				8EDAD51D274D2761002AEACF /* ContentView.swift */,
@@ -409,7 +412,6 @@
 		8EDAD51B274D2761002AEACF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				8EF44C542797BE7800AB9E9C /* Extension */,
 				8EF44C512797B92B00AB9E9C /* Helper */,
 				8EDAD562274D383E002AEACF /* Libs */,
 				8EDAD55C274D2AD2002AEACF /* Views */,
@@ -487,6 +489,7 @@
 		8EDAD55C274D2AD2002AEACF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F9356AFB279EF1360042632B /* Dialog */,
 				8E2C8C30279E945D001B38AD /* Field */,
 				8EBF9F9B279E2A2A00ECDEFE /* Shimmer */,
 				8E5EF2F027572AA3002EC872 /* FlowLayout */,
@@ -534,6 +537,7 @@
 		8EF4401C274E2A9D009FCD69 /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				8E1D36FE279903AE000F6217 /* DoubleExtension.swift */,
 				8EF4401D274E2AB8009FCD69 /* ViewExtension.swift */,
 				8EFFE63C274E87D3007F3479 /* ScreenExtension.swift */,
 			);
@@ -556,14 +560,6 @@
 				8E08F3BE279E626C00AD74AB /* ScreenUtil.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		8EF44C542797BE7800AB9E9C /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				8E1D36FE279903AE000F6217 /* DoubleExtension.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		E94412017BE64233B28A874E /* Frameworks */ = {
@@ -589,6 +585,21 @@
 				F9356AF9279EE7B20042632B /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F9356AFB279EF1360042632B /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				F9356AFC279EF16E0042632B /* CustomeDialog.swift */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
+		F966178F279F8E6F00B46BF2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -856,6 +867,7 @@
 				F9356AFA279EE7B20042632B /* LoginViewModel.swift in Sources */,
 				8E2C8C32279E946D001B38AD /* PasswordField.swift in Sources */,
 				8EFFE63B274E85E8007F3479 /* PopularMovieView.swift in Sources */,
+				F9356AFD279EF16E0042632B /* CustomeDialog.swift in Sources */,
 				8EDAD561274D36E5002AEACF /* UpcomingView.swift in Sources */,
 				8EFFE63F274E90B5007F3479 /* TopRateMovieView.swift in Sources */,
 				8E3CDFAB278D686A0080B037 /* APIManager.swift in Sources */,

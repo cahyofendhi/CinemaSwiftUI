@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct HideRowSeparatorModifier: ViewModifier {
     static let defaultListRowHeight: CGFloat = 44
@@ -57,6 +58,16 @@ extension View {
        .onPreferenceChange(SizePreferenceKey.self, perform: onChange)
     }
     
+}
+
+extension View {
+    
+    func showLoading(_ isShowing: Binding<Bool>, completion: (() -> ())? = nil) -> some View {
+        self.toast(isPresenting: isShowing, tapToDismiss: true, alert: {
+           AlertToast(displayMode: .alert, type: .loading, subTitle: "Loading")
+        }, completion: completion)
+
+    }
 }
 
 private struct SizePreferenceKey: PreferenceKey {

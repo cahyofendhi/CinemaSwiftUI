@@ -13,6 +13,9 @@ struct LoginView: View {
     
     @ObservedObject private var viewmodel = LoginViewModel()
     
+    @State private var showDialog = true
+    @State private var isLoading = false
+    
     var body: some View {
     
         NavigationView {
@@ -38,7 +41,10 @@ struct LoginView: View {
                     .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
                 
                 Button(action: {
-                    isLoggedin = true
+                    isLoading = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        self.isLoading = false
+                    }
                 }) {
                     Text("Submit")
                         .fontWeight(.light)
@@ -57,8 +63,9 @@ struct LoginView: View {
                     
                 
             })
+        }.showLoading($isLoading) {
+            isLoggedin = true
         }
-        
     }
     
 }
