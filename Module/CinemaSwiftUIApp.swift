@@ -11,13 +11,18 @@ import SwiftUI
 struct CinemaSwiftUIApp: App {
     
     @State var isLoggedin: Bool = false
+    @State var isFirst: Bool = true
         
     var body: some Scene {
         WindowGroup {
-            if isLoggedin {
-                ContentView()
+            if isFirst {
+                OnBoardPageView(isFirst: $isFirst)
             } else {
-                LoginView(isLoggedin: $isLoggedin)
+                if isLoggedin {
+                    ContentView()
+                } else {
+                    LoginView(isLoggedin: $isLoggedin)
+                }
             }
         }
     }

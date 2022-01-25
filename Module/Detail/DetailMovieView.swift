@@ -78,7 +78,6 @@ struct DetailMovieView: View {
                             Spacer()
 
                             ImageView(url: viewModel.movie?.getImageBackdrop() ?? "")
-                                .aspectRatio(3/4, contentMode: .fit)
                                 .frame(width: ScreenUtil.isIphone() ? 100 : 150)
                                 .cornerRadius(16)
 
@@ -96,6 +95,7 @@ struct DetailMovieView: View {
                                 .font(.system(size: 12))
                                 .foregroundColor(Color.gray)
                         }
+                        .padding(.top, 16)
                         .padding(.leading, 10)
                         .padding(.trailing, 10)
                         

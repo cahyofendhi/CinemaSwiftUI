@@ -15,6 +15,8 @@ struct SimiliarMovieView: View {
     
     var body: some View {
         
+        let width = UIScreen.width / (ScreenUtil.isIphone() ? 5 : 7)
+        
         VStack(alignment: .leading) {
             
             Text("Similiar")
@@ -45,8 +47,8 @@ struct SimiliarMovieView: View {
                         VStack(alignment: .center) {
                         
                             ImageView(url: it.getImagePoster())
-                                .frame(width:  UIScreen.width / (ScreenUtil.isIphone() ? 5 : 7),
-                                       height:  UIScreen.width / (ScreenUtil.isIphone() ? 5 : 7),
+                                .frame(width: width,
+                                       height: width,
                                        alignment: .center)
                                 .aspectRatio(contentMode: .fill)
                                 .cornerRadius(10)

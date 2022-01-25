@@ -66,6 +66,11 @@
 		F9356AF7279EE6510042632B /* FormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9356AF6279EE6510042632B /* FormValidation.swift */; };
 		F9356AFA279EE7B20042632B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9356AF9279EE7B20042632B /* LoginViewModel.swift */; };
 		F9356AFD279EF16E0042632B /* CustomeDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9356AFC279EF16E0042632B /* CustomeDialog.swift */; };
+		F9BC96B7279FCD2700B97596 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BC96B6279FCD2700B97596 /* OnboardModel.swift */; };
+		F9BC96B9279FCDA800B97596 /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BC96B8279FCDA800B97596 /* OnBoardView.swift */; };
+		F9BC96BB279FD32700B97596 /* OnBoardPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BC96BA279FD32700B97596 /* OnBoardPageView.swift */; };
+		F9BC96C1279FEC5700B97596 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BC96C0279FEC5700B97596 /* PageControl.swift */; };
+		F9BC96C3279FEFB600B97596 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BC96C2279FEFB600B97596 /* PageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +160,11 @@
 		F9356AF6279EE6510042632B /* FormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidation.swift; sourceTree = "<group>"; };
 		F9356AF9279EE7B20042632B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F9356AFC279EF16E0042632B /* CustomeDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeDialog.swift; sourceTree = "<group>"; };
+		F9BC96B6279FCD2700B97596 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
+		F9BC96B8279FCDA800B97596 /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
+		F9BC96BA279FD32700B97596 /* OnBoardPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardPageView.swift; sourceTree = "<group>"; };
+		F9BC96C0279FEC5700B97596 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		F9BC96C2279FEFB600B97596 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,10 +215,11 @@
 		8E2C8C25279E827E001B38AD /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				F966178F279F8E6F00B46BF2 /* Base */,
-				8E2C8C2D279E8B92001B38AD /* Auth */,
 				8EDAD51C274D2761002AEACF /* CinemaSwiftUIApp.swift */,
 				8EDAD51D274D2761002AEACF /* ContentView.swift */,
+				F9BC96B3279FCCFB00B97596 /* OnBoarding */,
+				F966178F279F8E6F00B46BF2 /* Base */,
+				8E2C8C2D279E8B92001B38AD /* Auth */,
 				8E3C4DDD274FD1D50089009C /* Detail */,
 				8EDAD55B274D2ACA002AEACF /* TV */,
 				8EDAD55A274D2AC2002AEACF /* Home */,
@@ -602,6 +613,34 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		F9BC96B3279FCCFB00B97596 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				F9BC96B5279FCD1100B97596 /* Model */,
+				F9BC96B4279FCD0800B97596 /* View */,
+				F9BC96BA279FD32700B97596 /* OnBoardPageView.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		F9BC96B4279FCD0800B97596 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9BC96B8279FCDA800B97596 /* OnBoardView.swift */,
+				F9BC96C0279FEC5700B97596 /* PageControl.swift */,
+				F9BC96C2279FEFB600B97596 /* PageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9BC96B5279FCD1100B97596 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9BC96B6279FCD2700B97596 /* OnboardModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -838,8 +877,10 @@
 				8E4FAB9C27966B81005C49F1 /* MovieModel.swift in Sources */,
 				8EDAD57B274D3BFF002AEACF /* AppLifeCycleModifier.swift in Sources */,
 				8EAF1BED2761E8CA0082381D /* Constant.swift in Sources */,
+				F9BC96B7279FCD2700B97596 /* OnboardModel.swift in Sources */,
 				8E5EF2EF27572A1B002EC872 /* FlexibleView.swift in Sources */,
 				8EBF9F9D279E2A5400ECDEFE /* HListShimmerView.swift in Sources */,
+				F9BC96BB279FD32700B97596 /* OnBoardPageView.swift in Sources */,
 				8E647A0A279A5643000715B5 /* PeopleModel.swift in Sources */,
 				8E5EF2F727575100002EC872 /* PeopleView.swift in Sources */,
 				8E1DFD4C2795B8AE00FAA8A5 /* EndpointItem.swift in Sources */,
@@ -864,14 +905,17 @@
 				8E3AFCE9274F734E007ECE00 /* TVView.swift in Sources */,
 				8E2C8C2F279E8BA9001B38AD /* LoginView.swift in Sources */,
 				8E3AFCEE274F8045007ECE00 /* TVVideoView.swift in Sources */,
+				F9BC96B9279FCDA800B97596 /* OnBoardView.swift in Sources */,
 				F9356AFA279EE7B20042632B /* LoginViewModel.swift in Sources */,
 				8E2C8C32279E946D001B38AD /* PasswordField.swift in Sources */,
 				8EFFE63B274E85E8007F3479 /* PopularMovieView.swift in Sources */,
 				F9356AFD279EF16E0042632B /* CustomeDialog.swift in Sources */,
+				F9BC96C3279FEFB600B97596 /* PageViewController.swift in Sources */,
 				8EDAD561274D36E5002AEACF /* UpcomingView.swift in Sources */,
 				8EFFE63F274E90B5007F3479 /* TopRateMovieView.swift in Sources */,
 				8E3CDFAB278D686A0080B037 /* APIManager.swift in Sources */,
 				8E3CDFAD278D6EE60080B037 /* ApiModel.swift in Sources */,
+				F9BC96C1279FEC5700B97596 /* PageControl.swift in Sources */,
 				8E1D36FF279903AE000F6217 /* DoubleExtension.swift in Sources */,
 				8EDAD579274D3BFF002AEACF /* ACarouselViewModel.swift in Sources */,
 				8EDAD545274D2761002AEACF /* CinemaSwiftUIApp.swift in Sources */,
