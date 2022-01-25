@@ -13,6 +13,8 @@ struct PeopleView: View {
     
     var body: some View {
         
+        let width = UIScreen.width / (ScreenUtil.isIphone() ? 5 : 7)
+        
         VStack(alignment: .leading) {
             
             Text("Full Cast")
@@ -31,8 +33,8 @@ struct PeopleView: View {
                         VStack {
                         
                             ImageView(url: it.getImageProfile())
-                                .aspectRatio(1, contentMode: .fill)
-                                .frame(width: UIScreen.width / (ScreenUtil.isIphone() ? 5 : 7))
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: width, height: width)
                                 .cornerRadius(10)
 
                             Text(it.name ?? "")
@@ -40,9 +42,12 @@ struct PeopleView: View {
                                 .font(.system(size: 10))
                                 .foregroundColor(.black)
                                 .lineLimit(2)
+                                .fixedSize(horizontal: false, vertical: true)
+                            
+                            Spacer()
                                 
                         }
-                        .frame(width: UIScreen.width / (ScreenUtil.isIphone() ? 5 : 7))
+                        .frame(width: width)
                     }
                     
                     Rectangle().fill(Color.white).frame(width: 0)
