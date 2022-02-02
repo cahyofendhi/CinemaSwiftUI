@@ -15,15 +15,16 @@ struct CinemaSwiftUIApp: App {
         
     var body: some Scene {
         WindowGroup {
-            if isFirst {
-                OnBoardPageView(isFirst: $isFirst)
-            } else {
-                if isLoggedin {
-                    ContentView()
-                } else {
-                    LoginView(isLoggedin: $isLoggedin)
-                }
-            }
+            ContentView()
+//            if isFirst {
+//                OnBoardPageView(isFirst: $isFirst)
+//            } else {
+//                if isLoggedin {
+//                    ContentView()
+//                } else {
+//                    LoginView(isLoggedin: $isLoggedin)
+//                }
+//            }
         }
     }
 }

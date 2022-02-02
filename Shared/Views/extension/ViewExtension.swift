@@ -66,8 +66,20 @@ extension View {
         self.toast(isPresenting: isShowing, tapToDismiss: true, alert: {
            AlertToast(displayMode: .alert, type: .loading, subTitle: "Loading")
         }, completion: completion)
-
     }
+    
+    func hasScrollEnabled(_ value: Bool) -> some View {
+        self.onAppear {
+            UITableView.appearance().isScrollEnabled = value
+        }
+    }
+    
+    func showScrollListIndicator(_ value: Bool) -> some View {
+        self.onAppear {
+            UITableView.appearance().showsVerticalScrollIndicator = value
+        }
+    }
+    
 }
 
 private struct SizePreferenceKey: PreferenceKey {

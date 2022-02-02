@@ -10,7 +10,6 @@ import SwiftUI
 struct TopRateMovieView: View {
     
     let movies: [Movie]
-    @State var tabBar: UITabBar! = nil
     
     var body: some View {
         
@@ -28,7 +27,7 @@ struct TopRateMovieView: View {
                     
                     HStack(alignment: .top, spacing: 16, content: {
                         
-                        NavigationLink(destination: DetailMovieView(tabBar: self.tabBar, movie: it)) {
+                        NavigationLink(destination: DetailMovieView(movie: it)) {
                         
                             ImageView(url: it.getImagePoster())
                                 .aspectRatio(3/4, contentMode: .fill)

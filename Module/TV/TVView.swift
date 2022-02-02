@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct TVView: View {
-    
+   
     @State private var tabBar: UITabBar? = nil
-    
     @ObservedObject private var viewModel = TvViewModel()
     
     var body: some View {
@@ -28,12 +27,13 @@ struct TVView: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        print("Click")
-                    }, label: {
-                        Image("ic_search")
-                    })
-                    .padding(.trailing, 16)
+                    
+                    NavigationLink(
+                        destination: SearchMovieView(isTv: true),
+                        label: {
+                            Image("ic_search")
+                        })
+                        .padding(.trailing, 16)
                     
                     
                 }
@@ -42,21 +42,21 @@ struct TVView: View {
                 if (viewModel.loadingOnAir ?? true) {
                     VideoListShimmerView()
                 } else {
-                    TVVideoView(movies: viewModel.onAirMovies ?? [], tabBar: self.tabBar)
+                    TVVideoView(movies: viewModel.onAirMovies ?? [])
                     .hideRowSeparator()
                 }
                 
                 if (viewModel.loadingPopular ?? true) {
                     HListShimmerView()
                 } else {
-                    TVTopRateView(movies: viewModel.popularMovies ?? [], title: "Popular", tabBar: self.tabBar)
+                    TVTopRateView(movies: viewModel.popularMovies ?? [], title: "Popular")
                         .hideRowSeparator()
                 }
                 
                 if (viewModel.loadingTop ?? true) {
                     HListShimmerView()
                 } else {
-                    TVTopRateView(movies: viewModel.topMovies ?? [], title: "Top Rate", tabBar: self.tabBar)
+                    TVTopRateView(movies: viewModel.topMovies ?? [], title: "Top Rate")
                         .hideRowSeparator()
                 }
                 

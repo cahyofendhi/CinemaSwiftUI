@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     init() {
-        UITabBar.appearance().barTintColor = .white
-        UIToolbar.appearance().barTintColor = UIColor.blue
+        let appearance = UITableViewCell.appearance()
+        appearance.selectionStyle = .none
     }
     
     @State var tabSelection: Tabs = .home

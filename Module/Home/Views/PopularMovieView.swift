@@ -11,8 +11,6 @@ struct PopularMovieView: View {
     
     let movies: [Movie]
     
-    @State var tabBar: UITabBar! = nil
-    
     var body: some View {
         
         
@@ -31,7 +29,7 @@ struct PopularMovieView: View {
 
                     ForEach(movies, id: \.self) { it in
                         
-                        NavigationLink(destination: DetailMovieView(tabBar: self.tabBar, movie: it)) {
+                        NavigationLink(destination: DetailMovieView(movie: it)) {
                             VStack(alignment: .leading, spacing: 5, content: {
                                 ImageView(url: it.getImagePoster())
                                     .frame(width: UIScreen.width / (ScreenUtil.isIphone() ? 3 : 5),

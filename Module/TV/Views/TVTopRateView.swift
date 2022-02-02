@@ -14,8 +14,6 @@ struct TVTopRateView: View {
     
     let title: String?
     
-    @State var tabBar: UITabBar! = nil
-    
     var body: some View {
         
         VStack(alignment: .leading, spacing: 20, content: {

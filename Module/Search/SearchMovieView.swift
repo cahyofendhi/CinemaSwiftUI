@@ -1,0 +1,48 @@
+//
+//  SearchMovieView.swift
+//  CinemaSwiftUI (iOS)
+//
+//  Created by Rumah Ulya on 25/01/22.
+//
+
+import SwiftUI
+import UIKit
+
+struct SearchMovieView: View {
+    
+    @State var isTv: Bool
+    @ObservedObject private var viewModel = SearchViewModel()
+    
+    var body: some View {
+        
+        VStack(alignment: .leading, spacing: 12, content: {
+            SearchBar(text: $viewModel.keyword)
+            
+            List {
+                if (viewModel.loadingMovie ?? true) {
+                    VListShimmerView()
+                } else {
+                    ForEach(viewModel.movies ?? [], id: \.self) { dt in
+                        MovieItem(movie: dt)
+                            .padding(EdgeInsets(top: 6, leading: 16, bottom: 16, trailing: 16))
+                            .hideRowSeparator()
+                    }
+                }
+            }
+            .showScrollListIndicator(false)
+        })
+        .navigationTitle("Movie")
+        .background(TabBarAccessor { tabbar in
+            tabbar.isHidden = true
+        })
+        .onLoad {
+            viewModel.getSearchMovie(keyword: "a")
+        }
+    }
+}
+
+struct SearchMovieView_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchMovieView(isTv: true)
+    }
+}
