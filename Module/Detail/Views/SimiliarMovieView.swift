@@ -11,8 +11,6 @@ struct SimiliarMovieView: View {
     
     var movies: [Movie]?
     
-    @State var tabBar: UITabBar? = nil
-    
     var body: some View {
         
         let width = UIScreen.width / (ScreenUtil.isIphone() ? 5 : 7)
@@ -42,7 +40,7 @@ struct SimiliarMovieView: View {
                 
                 ForEach(movies ?? [], id: \.self) { it in
                     
-                    NavigationLink(destination: DetailMovieView(tabBar: self.tabBar, movie: it)) {
+                    NavigationLink(destination: DetailMovieView(movie: it)) {
                     
                         VStack(alignment: .center) {
                         

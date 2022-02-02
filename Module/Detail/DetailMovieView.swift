@@ -9,8 +9,6 @@ import SwiftUI
 
 struct DetailMovieView: View {
     
-    @State var tabBar: UITabBar?
-    
     @State var movie: Movie?
     
     @ObservedObject private var viewModel = DetailViewModel()
@@ -107,7 +105,7 @@ struct DetailMovieView: View {
                     .background(Color.white)
                     .padding(.top, -8)
 
-                    SimiliarMovieView(movies: viewModel.similiar, tabBar: self.tabBar)
+                    SimiliarMovieView(movies: viewModel.similiar)
                         .background(Color.white)
                         .padding(.top, -30)
                         
@@ -120,8 +118,10 @@ struct DetailMovieView: View {
         }
         .background(Color.white)
         .navigationTitle("Movie")
+        .background(TabBarAccessor { tabbar in
+            tabbar.isHidden = true
+        })
         .onAppear {
-            self.tabBar?.isHidden = true
             self.viewModel.loadMovie(self.movie)
         }
         

@@ -10,14 +10,18 @@ import SwiftUI
 
 struct VListShimmerView: View {
     
+    var title: String?
+    
     var body: some View {
         
         VStack(alignment: .leading, spacing: 20, content: {
-            Text("Top Movie")
-                .font(.system(size: 16))
-                .bold()
-                .foregroundColor(.black)
-                .padding(.leading, 16)
+            if (title != nil) {
+                Text("Top Movie")
+                    .font(.system(size: 16))
+                    .bold()
+                    .foregroundColor(.black)
+                    .padding(.leading, 16)
+            }
             
             VStack(alignment: .leading) {
                 

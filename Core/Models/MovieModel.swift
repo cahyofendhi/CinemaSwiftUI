@@ -96,6 +96,10 @@ struct Movie: Codable, Identifiable, Hashable {
         case status, tagline
     }
     
+    init() {
+        
+    }
+    
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         

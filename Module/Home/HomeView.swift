@@ -31,15 +31,14 @@ struct HomeView: View {
                         .padding(.top, 20)
                         .redacted(reason: .placeholder)
                 } else {
-                    UpcomingView(movies: viewModel.upcomingMovies ?? [],
-                                 tabBar: self.tabBar)
+                    UpcomingView(movies: viewModel.upcomingMovies ?? [])
                     .hideRowSeparator()
                 }
                 
                 if (viewModel.loadingPopular ?? true) {
                     HListShimmerView()
                 } else {
-                    PopularMovieView(movies: viewModel.popularMovies ?? [], tabBar: self.tabBar)
+                    PopularMovieView(movies: viewModel.popularMovies ?? [])
                         .hideRowSeparator()
                         .padding(.top, 16)
                 }
@@ -47,7 +46,7 @@ struct HomeView: View {
                 if (viewModel.loadingTop ?? true) {
                     VListShimmerView()
                 } else {
-                    TopRateMovieView(movies: viewModel.topMovies ?? [], tabBar: self.tabBar)
+                    TopRateMovieView(movies: viewModel.topMovies ?? [])
                     .hideRowSeparator()
                     .padding(.top, 16)
                 }

@@ -10,7 +10,6 @@ import SwiftUI
 struct UpcomingView: View {
     
     let movies: [Movie]
-    @State var tabBar: UITabBar!
     
     var body: some View {
         
@@ -32,7 +31,7 @@ struct UpcomingView: View {
                           sidesScaling: 0.85,
                           isWrap: false) { item in
                     
-                    NavigationLink(destination: DetailMovieView(tabBar: self.tabBar, movie: item)) {
+                    NavigationLink(destination: DetailMovieView(movie: item)) {
                     
                         ZStack() {
                             ImageView(url: item.getImagePoster())

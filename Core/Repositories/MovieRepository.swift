@@ -15,6 +15,15 @@ class MovieRepository {
         self.service = service
     }
     
+    func getSearchMovieList(group: GroupType,
+                            keyword: String,
+                      page: Int = 1, completion: @escaping(ApiResult<MovieResponse, ErrorModel>)->()) {
+        let params: [String: Any] = ["api_key": Constant.apiKey, "page": page, "query" : keyword]
+        self.service.call(type: EndpointItem.searchMovie(group: group.rawValue),
+                          params: params,
+                          completion: completion)
+    }
+    
     func getMovieList(category: CategoryType,
                       page: Int = 1, completion: @escaping(ApiResult<MovieResponse, ErrorModel>)->()) {
         let params: [String: Any] = ["api_key": Constant.apiKey, "page": page]
