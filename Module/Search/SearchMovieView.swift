@@ -13,30 +13,40 @@ struct SearchMovieView: View {
     @State var isTv: Bool
     @ObservedObject private var viewModel = SearchViewModel()
     
+    @State var isLoad = false
+    
     var body: some View {
         
         VStack(alignment: .leading, spacing: 12, content: {
             SearchBar(text: $viewModel.keyword)
             
-            List {
-                if (viewModel.loadingMovie ?? true) {
+            PullAndRefreshScrollView(isloadMore: viewModel.haveMoreData) {
+                self.viewModel.getSearchMovie(keyword: viewModel.keyword, page: 1)
+            } onLoad: {
+                viewModel.getSearchMovie(keyword: viewModel.keyword, page: viewModel.page + 1)
+            } content: {
+                if viewModel.loadingMovie ==  true {
                     VListShimmerView()
+                } else if viewModel.movies.isEmpty {
+                    Text("Data Not Found")
+                        .frame(width: UIScreen.width, height: UIScreen.height / 1.5, alignment: .center)
                 } else {
-                    ForEach(viewModel.movies ?? [], id: \.self) { dt in
-                        MovieItem(movie: dt)
-                            .padding(EdgeInsets(top: 6, leading: 16, bottom: 16, trailing: 16))
-                            .hideRowSeparator()
-                    }
+                    ForEach(viewModel.movies, id: \.self) { dt in
+                       MovieItem(movie: dt)
+                           .padding(EdgeInsets(top: 6, leading: 16, bottom: 16, trailing: 16))
+                           .hideRowSeparator()
+                   }
                 }
             }
-            .showScrollListIndicator(false)
+            .padding(.top, -10)
+            
         })
         .navigationTitle("Movie")
         .background(TabBarAccessor { tabbar in
             tabbar.isHidden = true
         })
         .onLoad {
-            viewModel.getSearchMovie(keyword: "a")
+            viewModel.getSearchMovie()
         }
     }
 }

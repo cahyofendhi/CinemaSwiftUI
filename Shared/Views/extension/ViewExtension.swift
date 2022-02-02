@@ -77,6 +77,8 @@ extension View {
     func showScrollListIndicator(_ value: Bool) -> some View {
         self.onAppear {
             UITableView.appearance().showsVerticalScrollIndicator = value
+            UITableView.appearance().separatorStyle = .none
+            UITableView.appearance().separatorColor = .clear
         }
     }
     
