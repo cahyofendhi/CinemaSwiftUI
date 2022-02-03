@@ -17,62 +17,84 @@ struct PullAndRefreshScrollView<Content: View>: View {
     var enablePullDown: Bool = false
     var enablePullUp: Bool = false
     var isloadMore: Bool
+    var loading: Bool = false
     
-    init(enablePullDown: Bool = true, enablePullUp: Bool = true ,isloadMore: Bool, onRefresh: @escaping ()->Void, onLoad: @escaping ()->Void, @ViewBuilder content: () -> Content) {
+    init(enablePullDown: Bool = true,
+         enablePullUp: Bool = true,
+         loading: Bool = true,
+         isloadMore: Bool,
+         onRefresh: @escaping ()->Void,
+         onLoad: @escaping ()->Void,
+         @ViewBuilder content: () -> Content) {
         self.enablePullDown = enablePullDown
         self.enablePullUp = enablePullUp
         self.isloadMore = isloadMore
         self.onRefresh = onRefresh
         self.onLoad = onLoad
         self.content = content()
+        self.loading = loading
     }
     
     var body: some View {
         
-        ScrollView(.vertical, showsIndicators: false, content: {
-            if enablePullDown {
-                RefreshControl(coordinateSpace: .named("RefreshControl"),
-                               onRefresh: onRefresh, refresh: true)
-            }
-            LazyVStack(content: {
-                self.content
-                
-                if enablePullUp && isloadMore {
-                    ProgressView()
-                        .onAppear {
-                            self.onLoad()
-                        }
+        GeometryReader { geo in
+            
+            ScrollView(.vertical, showsIndicators: false, content: {
+                if enablePullDown {
+                    RefreshControl(coordinateSpace: .named("RefreshControl"), loading: loading)
+                        .padding(.top, loading ? 0 : -20)
                 }
-                
+                LazyVStack(content: {
+                    self.content
+                    
+                    if enablePullUp && isloadMore {
+                        ProgressView()
+                            .onAppear {
+                                self.onLoad()
+                            }
+                    }
+                    
+                })
+                .anchorPreference(key: OffsetPreferenceKey.self, value: .top) {
+                    geo[$0].y
+                }
             })
-        })
-        .coordinateSpace(name: "RefreshControl")
-        
+            .coordinateSpace(name: "RefreshControl")
+            .onPreferenceChange(OffsetPreferenceKey.self) { offset in
+                if offset > 30 {
+                   onRefresh()
+                }
+            }
+        }
     }
     
 }
 
+fileprivate struct OffsetPreferenceKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
+    }
+}
 
 
-struct RefreshControl: View {
+fileprivate struct RefreshControl: View {
     var coordinateSpace: CoordinateSpace
-    var onRefresh: ()->Void
     @State var refresh: Bool = false
+    var loading: Bool = false
+    
     var body: some View {
         GeometryReader { geo in
             if (geo.frame(in: coordinateSpace).midY > 50) {
                 Spacer()
                     .onAppear {
-                        if refresh == false {
-                            onRefresh() ///call refresh once if pulled more than 50px
-                        }
                         refresh = true
                     }
             } else if (geo.frame(in: coordinateSpace).maxY < 1) {
                 Spacer()
                     .onAppear {
                         refresh = false
-                        ///reset  refresh if view shrink back
                     }
             }
             ZStack(alignment: .center) {
@@ -91,6 +113,8 @@ struct RefreshControl: View {
                    }.frame(width: 20, height: 20, alignment: .center)
                 }
             }.frame(width: geo.size.width)
-        }.padding(.top, -50)
+        }
+        .padding(.top, loading && refresh ? 0 : -20)
+        .padding(.bottom, 20)
     }
 }

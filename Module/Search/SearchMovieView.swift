@@ -20,12 +20,12 @@ struct SearchMovieView: View {
         VStack(alignment: .leading, spacing: 12, content: {
             SearchBar(text: $viewModel.keyword)
             
-            PullAndRefreshScrollView(isloadMore: viewModel.haveMoreData) {
+            PullAndRefreshScrollView(loading: viewModel.loadingMovie ?? true, isloadMore: viewModel.haveMoreData) {
                 self.viewModel.getSearchMovie(keyword: viewModel.keyword, page: 1)
             } onLoad: {
                 viewModel.getSearchMovie(keyword: viewModel.keyword, page: viewModel.page + 1)
             } content: {
-                if viewModel.loadingMovie ==  true {
+                if viewModel.loadingMovie ==  true && viewModel.movies.isEmpty {
                     VListShimmerView()
                 } else if viewModel.movies.isEmpty {
                     Text("Data Not Found")

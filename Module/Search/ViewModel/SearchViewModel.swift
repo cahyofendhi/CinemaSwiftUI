@@ -48,7 +48,6 @@ class SearchViewModel: ObservableObject {
         self.repository.getSearchMovieList(group: self.group, keyword: keyword, page: page) { (result: ApiResult<MovieResponse, ErrorModel>) in
             switch result {
             case .success(let data):
-                self.loadingMovie = false
                 if let p = data.page, let totPage = data.totalPages, let models = data.results {
                     if (p == 1) {
                         self.movies = models
@@ -59,6 +58,8 @@ class SearchViewModel: ObservableObject {
                     self.totalPages = totPage
                     self.haveMoreData = p < totPage
                 }
+                self.loadingMovie = false
+                
                 break
             case .failure(let error):
                 print("Error : \(error)")
