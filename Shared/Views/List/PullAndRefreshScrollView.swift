@@ -56,12 +56,12 @@ struct PullAndRefreshScrollView<Content: View>: View {
                     
                 })
                 .anchorPreference(key: OffsetPreferenceKey.self, value: .top) {
-                    geo[$0].y
+                    return geo[$0].y
                 }
             })
             .coordinateSpace(name: "RefreshControl")
             .onPreferenceChange(OffsetPreferenceKey.self) { offset in
-                if offset > 30 {
+                if offset > 50 {
                    onRefresh()
                 }
             }

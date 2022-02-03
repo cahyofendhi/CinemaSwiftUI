@@ -65,6 +65,7 @@ struct LoginView: View {
             })
         }.showLoading($isLoading) {
             isLoggedin = true
+            SessionData.setData(value: true, key: .isLogin)
         }
     }
     

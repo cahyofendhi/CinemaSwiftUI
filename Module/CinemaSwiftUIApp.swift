@@ -10,21 +10,20 @@ import SwiftUI
 @main
 struct CinemaSwiftUIApp: App {
     
-    @State var isLoggedin: Bool = false
-    @State var isFirst: Bool = true
-        
+    @State var isLoggedin: Bool = SessionData.getData(type: Bool.self, forKey: .isLogin) ?? false
+    @State var isFirst: Bool = SessionData.getData(type: Bool.self, forKey: .isIntro) ?? true
+      
     var body: some Scene {
         WindowGroup {
-            ContentView()
-//            if isFirst {
-//                OnBoardPageView(isFirst: $isFirst)
-//            } else {
-//                if isLoggedin {
-//                    ContentView()
-//                } else {
-//                    LoginView(isLoggedin: $isLoggedin)
-//                }
-//            }
+            if isFirst {
+                OnBoardPageView(isFirst: $isFirst)
+            } else {
+                if isLoggedin {
+                    ContentView()
+                } else {
+                    LoginView(isLoggedin: $isLoggedin)
+                }
+            }
         }
     }
 }
