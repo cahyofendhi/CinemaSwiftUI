@@ -9,6 +9,8 @@ target 'CinemaSwiftUI (iOS)' do
   pod 'Alamofire', '~> 5.5'
   pod 'Kingfisher', '~> 7.0'
   pod 'AlertToast'
+  pod 'RealmSwift'
+  pod 'SwiftGen', '~> 6.0'
 
 end
 
