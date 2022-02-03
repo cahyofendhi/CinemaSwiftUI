@@ -40,6 +40,7 @@ struct PasswordField: View {
                 Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
                     .opacity(0.8)
             }
+            .accessibilityIdentifier("eyeButton")
         }
         .padding()
         .background(RoundedRectangle(cornerRadius: 6)

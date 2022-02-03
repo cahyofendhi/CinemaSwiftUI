@@ -64,6 +64,7 @@ struct LoginView: View {
                 .padding(.leading, 16)
                 .padding(.trailing, 16)
                 .disabled(!viewmodel.state.isButtonEnabled)
+                .accessibilityIdentifier("loginButton")
                 
                 Spacer()
                     
