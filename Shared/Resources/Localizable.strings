@@ -9,3 +9,8 @@
 "intro_4_description" = "Description onboard page 4";
 "intro_5_title" = "Onboard Page 5";
 "intro_5_description" = "Description onboard page 5";
+
+"login" = "Login";
+"username_or_email" = "Username or Email";
+"password" = "Password";
+"submit" = "Submit";

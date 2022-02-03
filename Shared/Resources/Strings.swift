@@ -30,8 +30,16 @@ internal enum L10n {
   internal static let intro5Description = L10n.tr("Localizable", "intro_5_description")
   /// Onboard Page 5
   internal static let intro5Title = L10n.tr("Localizable", "intro_5_title")
+  /// Login
+  internal static let login = L10n.tr("Localizable", "login")
+  /// Password
+  internal static let password = L10n.tr("Localizable", "password")
+  /// Submit
+  internal static let submit = L10n.tr("Localizable", "submit")
   /// Movie
   internal static let title = L10n.tr("Localizable", "title")
+  /// Username or Email
+  internal static let usernameOrEmail = L10n.tr("Localizable", "username_or_email")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

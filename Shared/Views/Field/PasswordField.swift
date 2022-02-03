@@ -22,6 +22,11 @@ struct PasswordField: View {
                     TextField(title, text: self.$value)
                         .frame(height: 16)
                         .autocapitalization(.none)
+                        .placeholder(when: value.isEmpty, placeholder: {
+                            Text(L10n.usernameOrEmail)
+                                .foregroundColor(.gray.opacity(0.3))
+                                .descStyle()
+                        })
                 } else {
                     SecureField(title, text: self.$value)
                         .frame(height: 16)
