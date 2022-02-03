@@ -30,6 +30,8 @@
 		8E647A0A279A5643000715B5 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E647A09279A5643000715B5 /* PeopleModel.swift */; };
 		8E647A0C279A5905000715B5 /* SimiliarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E647A0B279A5905000715B5 /* SimiliarModel.swift */; };
 		8E69E89627993F4A00D1AFE8 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E69E89527993F4A00D1AFE8 /* DetailViewModel.swift */; };
+		8E76175727AA660400713938 /* PullAndRefreshScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E76175627AA660400713938 /* PullAndRefreshScrollView.swift */; };
+		8E76175927AA793300713938 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E76175827AA793300713938 /* Debouncer.swift */; };
 		8EAC80DF27546B1C00C01FAC /* TabBarAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC80DE27546B1C00C01FAC /* TabBarAccessor.swift */; };
 		8EAC80E527547C8C00C01FAC /* CustomNavigationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC80E427547C8C00C01FAC /* CustomNavigationStyle.swift */; };
 		8EAC80EA2754826600C01FAC /* NoSeparatorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC80E92754826600C01FAC /* NoSeparatorList.swift */; };
@@ -123,6 +125,8 @@
 		8E647A09279A5643000715B5 /* PeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
 		8E647A0B279A5905000715B5 /* SimiliarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimiliarModel.swift; sourceTree = "<group>"; };
 		8E69E89527993F4A00D1AFE8 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		8E76175627AA660400713938 /* PullAndRefreshScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullAndRefreshScrollView.swift; sourceTree = "<group>"; };
+		8E76175827AA793300713938 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		8EAC80DE27546B1C00C01FAC /* TabBarAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAccessor.swift; sourceTree = "<group>"; };
 		8EAC80E427547C8C00C01FAC /* CustomNavigationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationStyle.swift; sourceTree = "<group>"; };
 		8EAC80E92754826600C01FAC /* NoSeparatorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSeparatorList.swift; sourceTree = "<group>"; };
@@ -229,7 +233,6 @@
 				8EDAD51C274D2761002AEACF /* CinemaSwiftUIApp.swift */,
 				8EDAD51D274D2761002AEACF /* ContentView.swift */,
 				F9BC96B3279FCCFB00B97596 /* OnBoarding */,
-				F966178F279F8E6F00B46BF2 /* Base */,
 				8E2C8C2D279E8B92001B38AD /* Auth */,
 				8E3C4DDD274FD1D50089009C /* Detail */,
 				8EDAD55B274D2ACA002AEACF /* TV */,
@@ -382,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				8EAC80E92754826600C01FAC /* NoSeparatorList.swift */,
+				8E76175627AA660400713938 /* PullAndRefreshScrollView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -582,6 +586,7 @@
 				F9356AF5279EE62B0042632B /* Validator */,
 				8EF44C522797B94200AB9E9C /* DatesFormater.swift */,
 				8E08F3BE279E626C00AD74AB /* ScreenUtil.swift */,
+				8E76175827AA793300713938 /* Debouncer.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -635,13 +640,6 @@
 				F964D9E427A82C02005219B0 /* ViewDidLoadModifier.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F966178F279F8E6F00B46BF2 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		F9BC96B3279FCCFB00B97596 /* OnBoarding */ = {
@@ -914,6 +912,7 @@
 			files = (
 				8EBF9FA5279E493E00ECDEFE /* VideoListShimmerView.swift in Sources */,
 				F93F5E7A27A0512B006C75DD /* MovieItem.swift in Sources */,
+				8E76175927AA793300713938 /* Debouncer.swift in Sources */,
 				8E5EF2EC2756FED3002EC872 /* CornerRadiusStyle.swift in Sources */,
 				8EDAD577274D3BFF002AEACF /* ACarouselAutoScroll.swift in Sources */,
 				8EAC80DF27546B1C00C01FAC /* TabBarAccessor.swift in Sources */,
@@ -951,6 +950,7 @@
 				8E08F3BF279E626C00AD74AB /* ScreenUtil.swift in Sources */,
 				8EF44C502797B54D00AB9E9C /* TvViewModel.swift in Sources */,
 				8EF4401E274E2AB8009FCD69 /* ViewExtension.swift in Sources */,
+				8E76175727AA660400713938 /* PullAndRefreshScrollView.swift in Sources */,
 				8EDAD578274D3BFF002AEACF /* View+ReceiveTimer.swift in Sources */,
 				8EDAD547274D2761002AEACF /* ContentView.swift in Sources */,
 				8E3AFCE9274F734E007ECE00 /* TVView.swift in Sources */,
