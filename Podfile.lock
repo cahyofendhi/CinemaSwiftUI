@@ -10,7 +10,7 @@ PODS:
   - SwiftGen (6.5.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.5)
+  - Alamofire
   - AlertToast
   - Kingfisher (~> 7.0)
   - RealmSwift
@@ -33,6 +33,6 @@ SPEC CHECKSUMS:
   RealmSwift: 129dce1dd6b5d9194a37f568aaf32a6c10d1a803
   SwiftGen: a6d22010845f08fe18fbdf3a07a8e380fd22e0ea
 
-PODFILE CHECKSUM: 8247160f1f90554d6d7d6e877007862ef4facf51
+PODFILE CHECKSUM: ed40279bc5c5003d959aab221d9c50b3ed719e36
 
 COCOAPODS: 1.10.1

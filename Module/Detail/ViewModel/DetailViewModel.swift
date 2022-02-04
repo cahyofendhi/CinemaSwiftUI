@@ -14,10 +14,10 @@ class DetailViewModel: ObservableObject {
     @Published var crews: [People]?
     @Published var similiar: [Movie]?
     
-    private let repository: MovieRepository
+    private let repository: MovieProtocol
     
-    init() {
-        self.repository = MovieRepository()
+    init(repository: MovieProtocol = MovieRepository()) {
+        self.repository = repository
     }
     
     func loadMovie(_ data: Movie?) {
@@ -50,7 +50,8 @@ class DetailViewModel: ObservableObject {
                     self.crews = dt
                 }
                 break
-            case .failure(_):
+            case .failure(let error):
+                print("Error : \(error)")
                 break
             }
         }

@@ -17,14 +17,14 @@ class HomeViewModel: ObservableObject {
     @Published var popularMovies: [Movie]?
     @Published var topMovies: [Movie]?
     
-    private let repository: MovieRepository
+    private let repository: MovieProtocol
     
-    init() {
-        self.repository = MovieRepository()
+    init(repository: MovieProtocol = MovieRepository()) {
+        self.repository = repository
         getMovieList()
     }
     
-    private func getMovieList() {
+    func getMovieList() {
         self.getMovie(.upcoming)
         self.getMovie(.popular)
         self.getMovie(.toprate)
@@ -34,7 +34,7 @@ class HomeViewModel: ObservableObject {
         loadingUpcoming = true
         loadingPopular = true
         loadingTop = true
-        self.repository.getMovieList(category: category) { (result: ApiResult<MovieResponse, ErrorModel>) in
+        self.repository.getMovieList(category: category, page: 1) { (result: ApiResult<MovieResponse, ErrorModel>) in
             switch result {
             case .success(let data):
                 if let models = data.results {

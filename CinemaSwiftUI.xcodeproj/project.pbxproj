@@ -9,6 +9,22 @@
 /* Begin PBXBuildFile section */
 		3695B4B336B53FEC1B189061 /* Pods_CinemaSwiftUI__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB95DF0A44748FD83BC943FE /* Pods_CinemaSwiftUI__macOS_.framework */; };
 		8E08F3BF279E626C00AD74AB /* ScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E08F3BE279E626C00AD74AB /* ScreenUtil.swift */; };
+		8E0D169227ACB16800E29470 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4FAB9D27967652005C49F1 /* MovieRepository.swift */; };
+		8E0D169327ACB17000E29470 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3CDFAA278D686A0080B037 /* APIManager.swift */; };
+		8E0D169427ACB17000E29470 /* EndpointItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1DFD4B2795B8AE00FAA8A5 /* EndpointItem.swift */; };
+		8E0D169627ACB3A400E29470 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1DFD492795B69500FAA8A5 /* EndPointType.swift */; };
+		8E0D169727ACB40400E29470 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF1BEC2761E8CA0082381D /* Constant.swift */; };
+		8E1C82C227AC0F3300A0B7F9 /* SampleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C82C127AC0F3300A0B7F9 /* SampleResponse.swift */; };
+		8E1C82C727AC103900A0B7F9 /* RepoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C82C627AC103900A0B7F9 /* RepoTest.swift */; };
+		8E1C82CC27AC1F2700A0B7F9 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4FAB9B27966B81005C49F1 /* MovieModel.swift */; };
+		8E1C82CE27AC26A600A0B7F9 /* MockMovieRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C82CD27AC26A600A0B7F9 /* MockMovieRepo.swift */; };
+		8E1C82D027AC2BF200A0B7F9 /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3CDFAC278D6EE60080B037 /* ApiModel.swift */; };
+		8E1C82D127AC2C3D00A0B7F9 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E647A09279A5643000715B5 /* PeopleModel.swift */; };
+		8E1C82D227AC2C4000A0B7F9 /* SimiliarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E647A0B279A5905000715B5 /* SimiliarModel.swift */; };
+		8E1C82D827AC2D3100A0B7F9 /* MovieProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C82D727AC2D3100A0B7F9 /* MovieProtocol.swift */; };
+		8E1C82D927AC2D3100A0B7F9 /* MovieProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C82D727AC2D3100A0B7F9 /* MovieProtocol.swift */; };
+		8E1C82DC27AC2DB400A0B7F9 /* MovieViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C82DB27AC2DB400A0B7F9 /* MovieViewModelTest.swift */; };
+		8E1C82DD27AC2EE800A0B7F9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF1BEF2761FABC0082381D /* HomeViewModel.swift */; };
 		8E1D36FF279903AE000F6217 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1D36FE279903AE000F6217 /* DoubleExtension.swift */; };
 		8E1DFD4A2795B69500FAA8A5 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1DFD492795B69500FAA8A5 /* EndPointType.swift */; };
 		8E1DFD4C2795B8AE00FAA8A5 /* EndpointItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1DFD4B2795B8AE00FAA8A5 /* EndpointItem.swift */; };
@@ -56,6 +72,7 @@
 		8E7FB6D527ABAE5E00BBAE81 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB6D427ABAE5E00BBAE81 /* Text.swift */; };
 		8E7FB6D627ABAE5E00BBAE81 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB6D427ABAE5E00BBAE81 /* Text.swift */; };
 		8E7FB6D827ABC1BD00BBAE81 /* LoginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB6D727ABC1BD00BBAE81 /* LoginTest.swift */; };
+		8E831AB027ACC1F5008A0307 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E69E89527993F4A00D1AFE8 /* DetailViewModel.swift */; };
 		8EAC80DF27546B1C00C01FAC /* TabBarAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC80DE27546B1C00C01FAC /* TabBarAccessor.swift */; };
 		8EAC80E527547C8C00C01FAC /* CustomNavigationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC80E427547C8C00C01FAC /* CustomNavigationStyle.swift */; };
 		8EAC80EA2754826600C01FAC /* NoSeparatorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC80E92754826600C01FAC /* NoSeparatorList.swift */; };
@@ -88,6 +105,7 @@
 		8EFFE63B274E85E8007F3479 /* PopularMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFE63A274E85E8007F3479 /* PopularMovieView.swift */; };
 		8EFFE63D274E87D3007F3479 /* ScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFE63C274E87D3007F3479 /* ScreenExtension.swift */; };
 		8EFFE63F274E90B5007F3479 /* TopRateMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFE63E274E90B5007F3479 /* TopRateMovieView.swift */; };
+		CB99E41275370CDCBB4AC1AE /* Pods_Tests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFFAFD6BF7393D422B9BDF8F /* Pods_Tests_iOS.framework */; };
 		F65399A422D2BD156F5CE48C /* Pods_CinemaSwiftUI__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15381FC92728565A16120DBD /* Pods_CinemaSwiftUI__iOS_.framework */; };
 		F9356AF7279EE6510042632B /* FormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9356AF6279EE6510042632B /* FormValidation.swift */; };
 		F9356AFA279EE7B20042632B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9356AF9279EE7B20042632B /* LoginViewModel.swift */; };
@@ -126,8 +144,14 @@
 		15381FC92728565A16120DBD /* Pods_CinemaSwiftUI__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CinemaSwiftUI__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BCB5650E9B699CE58170A01 /* Pods-CinemaSwiftUI (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemaSwiftUI (macOS).debug.xcconfig"; path = "Target Support Files/Pods-CinemaSwiftUI (macOS)/Pods-CinemaSwiftUI (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		232F2A8F2299C7F891CA39A6 /* Pods-CinemaSwiftUI (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemaSwiftUI (macOS).release.xcconfig"; path = "Target Support Files/Pods-CinemaSwiftUI (macOS)/Pods-CinemaSwiftUI (macOS).release.xcconfig"; sourceTree = "<group>"; };
+		31C671F774376E7BCEED610C /* Pods-Tests iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests iOS.release.xcconfig"; path = "Target Support Files/Pods-Tests iOS/Pods-Tests iOS.release.xcconfig"; sourceTree = "<group>"; };
 		4820C6B1DFC64DBADD6DC1BD /* Pods-CinemaSwiftUI (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemaSwiftUI (iOS).release.xcconfig"; path = "Target Support Files/Pods-CinemaSwiftUI (iOS)/Pods-CinemaSwiftUI (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		8E08F3BE279E626C00AD74AB /* ScreenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtil.swift; sourceTree = "<group>"; };
+		8E1C82C127AC0F3300A0B7F9 /* SampleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleResponse.swift; sourceTree = "<group>"; };
+		8E1C82C627AC103900A0B7F9 /* RepoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTest.swift; sourceTree = "<group>"; };
+		8E1C82CD27AC26A600A0B7F9 /* MockMovieRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieRepo.swift; sourceTree = "<group>"; };
+		8E1C82D727AC2D3100A0B7F9 /* MovieProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieProtocol.swift; sourceTree = "<group>"; };
+		8E1C82DB27AC2DB400A0B7F9 /* MovieViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModelTest.swift; sourceTree = "<group>"; };
 		8E1D36FE279903AE000F6217 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		8E1DFD492795B69500FAA8A5 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		8E1DFD4B2795B8AE00FAA8A5 /* EndpointItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointItem.swift; sourceTree = "<group>"; };
@@ -202,6 +226,7 @@
 		8EFFE63A274E85E8007F3479 /* PopularMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieView.swift; sourceTree = "<group>"; };
 		8EFFE63C274E87D3007F3479 /* ScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenExtension.swift; sourceTree = "<group>"; };
 		8EFFE63E274E90B5007F3479 /* TopRateMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRateMovieView.swift; sourceTree = "<group>"; };
+		B501A4A4C6633D48D61B079F /* Pods-Tests iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests iOS.debug.xcconfig"; path = "Target Support Files/Pods-Tests iOS/Pods-Tests iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DB95DF0A44748FD83BC943FE /* Pods_CinemaSwiftUI__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CinemaSwiftUI__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9356AF6279EE6510042632B /* FormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidation.swift; sourceTree = "<group>"; };
 		F9356AF9279EE7B20042632B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -216,6 +241,7 @@
 		F9BC96C0279FEC5700B97596 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		F9BC96C2279FEFB600B97596 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		F9CB01C727A0EFA5008A8F76 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		FFFAFD6BF7393D422B9BDF8F /* Pods_Tests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +265,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB99E41275370CDCBB4AC1AE /* Pods_Tests_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +286,35 @@
 				4820C6B1DFC64DBADD6DC1BD /* Pods-CinemaSwiftUI (iOS).release.xcconfig */,
 				1BCB5650E9B699CE58170A01 /* Pods-CinemaSwiftUI (macOS).debug.xcconfig */,
 				232F2A8F2299C7F891CA39A6 /* Pods-CinemaSwiftUI (macOS).release.xcconfig */,
+				B501A4A4C6633D48D61B079F /* Pods-Tests iOS.debug.xcconfig */,
+				31C671F774376E7BCEED610C /* Pods-Tests iOS.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8E1C82C027AC0F1600A0B7F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8E1C82C127AC0F3300A0B7F9 /* SampleResponse.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8E1C82C327AC0FC400A0B7F9 /* Repo UnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				8E1C82C627AC103900A0B7F9 /* RepoTest.swift */,
+				8E1C82CD27AC26A600A0B7F9 /* MockMovieRepo.swift */,
+			);
+			path = "Repo UnitTest";
+			sourceTree = "<group>";
+		};
+		8E1C82DA27AC2D8700A0B7F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8E1C82DB27AC2DB400A0B7F9 /* MovieViewModelTest.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8E2C8C25279E827E001B38AD /* Module */ = {
@@ -355,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				8E4FAB9D27967652005C49F1 /* MovieRepository.swift */,
+				8E1C82D727AC2D3100A0B7F9 /* MovieProtocol.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -436,12 +491,12 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		8E7FB6D927ABC4BB00BBAE81 /* Auth */ = {
+		8E7FB6D927ABC4BB00BBAE81 /* Auth UITest */ = {
 			isa = PBXGroup;
 			children = (
 				8E7FB6D727ABC1BD00BBAE81 /* LoginTest.swift */,
 			);
-			path = Auth;
+			path = "Auth UITest";
 			sourceTree = "<group>";
 		};
 		8EAC80DD27546B0300C01FAC /* TabBar */ = {
@@ -559,7 +614,10 @@
 		8EDAD536274D2761002AEACF /* Tests iOS */ = {
 			isa = PBXGroup;
 			children = (
-				8E7FB6D927ABC4BB00BBAE81 /* Auth */,
+				8E1C82DA27AC2D8700A0B7F9 /* ViewModel */,
+				8E1C82C327AC0FC400A0B7F9 /* Repo UnitTest */,
+				8E1C82C027AC0F1600A0B7F9 /* Resources */,
+				8E7FB6D927ABC4BB00BBAE81 /* Auth UITest */,
 				8EDAD537274D2761002AEACF /* Tests_iOS.swift */,
 				8EDAD539274D2761002AEACF /* Info.plist */,
 			);
@@ -678,6 +736,7 @@
 			children = (
 				15381FC92728565A16120DBD /* Pods_CinemaSwiftUI__iOS_.framework */,
 				DB95DF0A44748FD83BC943FE /* Pods_CinemaSwiftUI__macOS_.framework */,
+				FFFAFD6BF7393D422B9BDF8F /* Pods_Tests_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -813,9 +872,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8EDAD553274D2761002AEACF /* Build configuration list for PBXNativeTarget "Tests iOS" */;
 			buildPhases = (
+				6C54AA19D76F451EBCDC1EBA /* [CP] Check Pods Manifest.lock */,
 				8EDAD52F274D2761002AEACF /* Sources */,
 				8EDAD530274D2761002AEACF /* Frameworks */,
 				8EDAD531274D2761002AEACF /* Resources */,
+				AE25D3B41115FF82C098C359 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -939,6 +1000,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6C54AA19D76F451EBCDC1EBA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tests iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		713BEE5D916644FBCB57C7F3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1008,6 +1091,23 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "swiftgen template list\n";
+		};
+		AE25D3B41115FF82C098C359 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tests iOS/Pods-Tests iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tests iOS/Pods-Tests iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tests iOS/Pods-Tests iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		D1477F90CBFC6A026A26AAEA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1089,6 +1189,7 @@
 				F9BC96C3279FEFB600B97596 /* PageViewController.swift in Sources */,
 				8EDAD561274D36E5002AEACF /* UpcomingView.swift in Sources */,
 				8EFFE63F274E90B5007F3479 /* TopRateMovieView.swift in Sources */,
+				8E1C82D827AC2D3100A0B7F9 /* MovieProtocol.swift in Sources */,
 				8E7FB6D027AB997700BBAE81 /* Assets.swift in Sources */,
 				8E3CDFAB278D686A0080B037 /* APIManager.swift in Sources */,
 				8E3CDFAD278D6EE60080B037 /* ApiModel.swift in Sources */,
@@ -1121,8 +1222,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E0D169627ACB3A400E29470 /* EndPointType.swift in Sources */,
+				8E0D169727ACB40400E29470 /* Constant.swift in Sources */,
 				8EDAD538274D2761002AEACF /* Tests_iOS.swift in Sources */,
+				8E1C82D127AC2C3D00A0B7F9 /* PeopleModel.swift in Sources */,
 				8E7FB6D827ABC1BD00BBAE81 /* LoginTest.swift in Sources */,
+				8E1C82CC27AC1F2700A0B7F9 /* MovieModel.swift in Sources */,
+				8E1C82C227AC0F3300A0B7F9 /* SampleResponse.swift in Sources */,
+				8E1C82DC27AC2DB400A0B7F9 /* MovieViewModelTest.swift in Sources */,
+				8E0D169327ACB17000E29470 /* APIManager.swift in Sources */,
+				8E1C82D927AC2D3100A0B7F9 /* MovieProtocol.swift in Sources */,
+				8E1C82DD27AC2EE800A0B7F9 /* HomeViewModel.swift in Sources */,
+				8E1C82D027AC2BF200A0B7F9 /* ApiModel.swift in Sources */,
+				8E0D169427ACB17000E29470 /* EndpointItem.swift in Sources */,
+				8E831AB027ACC1F5008A0307 /* DetailViewModel.swift in Sources */,
+				8E1C82CE27AC26A600A0B7F9 /* MockMovieRepo.swift in Sources */,
+				8E1C82C727AC103900A0B7F9 /* RepoTest.swift in Sources */,
+				8E0D169227ACB16800E29470 /* MovieRepository.swift in Sources */,
+				8E1C82D227AC2C4000A0B7F9 /* SimiliarModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1360,6 +1477,7 @@
 		};
 		8EDAD554274D2761002AEACF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B501A4A4C6633D48D61B079F /* Pods-Tests iOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1382,6 +1500,7 @@
 		};
 		8EDAD555274D2761002AEACF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31C671F774376E7BCEED610C /* Pods-Tests iOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
