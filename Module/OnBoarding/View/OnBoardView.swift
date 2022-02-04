@@ -27,16 +27,17 @@ struct OnBoardView: View {
                 
                 HStack {
                     Text(self.page.title)
-                        .font(.title)
-                        .foregroundColor(.blue)
+                        .titleStyle(size: 20)
                     
                     Spacer()
                 }
                 
                 HStack {
                     Text(self.page.description)
+                        .descStyle(size: 18)
                     Spacer()
                 }
+                .padding(.top, 12)
                 
             }
             

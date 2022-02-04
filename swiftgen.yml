@@ -1,0 +1,23 @@
+strings:
+  inputs: Shared/Resources/
+  outputs:
+    - templateName: structured-swift5
+      output: Shared/Resources/Strings.swift
+      
+xcassets:
+  inputs:
+    - Shared/Resources/Assets.xcassets
+    - Shared/Resources/Colors.xcassets
+  outputs:
+    - templateName: swift5
+      output: Shared/Resources/Assets.swift
+
+fonts:
+  inputs: Shared/Resources/Fonts/
+  outputs:
+    templateName: swift5
+    output: Shared/Resources/Fonts.swift
+
+
+
+#Pods/SwiftGen/bin/swiftgen (for command)

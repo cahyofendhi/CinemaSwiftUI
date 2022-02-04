@@ -17,10 +17,10 @@ class TvViewModel: ObservableObject {
     @Published var popularMovies: [Movie]?
     @Published var topMovies: [Movie]?
     
-    private let repository: MovieRepository
+    private let repository: MovieProtocol
     
-    init() {
-        self.repository = MovieRepository()
+    init(repository: MovieProtocol = MovieRepository()) {
+        self.repository = repository
         getMovieList()
     }
     
@@ -34,7 +34,7 @@ class TvViewModel: ObservableObject {
         loadingOnAir = true
         loadingPopular = true
         loadingTop = true
-        self.repository.getTVMovieList(category: category) { (result: ApiResult<MovieResponse, ErrorModel>) in
+        self.repository.getTVMovieList(category: category, page: 1) { (result: ApiResult<MovieResponse, ErrorModel>) in
             switch result {
             case .success(let data):
                 if let models = data.results {

@@ -37,6 +37,7 @@ struct OnBoardPageView: View {
                 Button(action: {
                     withAnimation (.easeInOut(duration: 1.0)) {
                         if self.currentPage == 3 {
+                            SessionData.setData(value: false, key: .isIntro)
                             isFirst = false
                         } else {
                             self.currentPage = (self.currentPage + 1)%self.pages.count

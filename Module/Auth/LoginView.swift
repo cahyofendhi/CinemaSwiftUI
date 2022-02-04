@@ -21,23 +21,29 @@ struct LoginView: View {
         NavigationView {
         
             VStack(alignment: .center, spacing: 0, content: {
-                Text("Login")
-                    .font(.title)
-                    .foregroundColor(Color.black)
+                Text(L10n.login)
+                    .titleStyle(size: 18)
                 
-                TextField("Username or Email",text: .init(
+                TextField(L10n.usernameOrEmail,text: .init(
                     get: { [viewmodel] in viewmodel.state.email },
                     set: { [viewmodel] in viewmodel.updateEmail($0) }
                 ))
+                    .placeholder(when: viewmodel.state.email.isEmpty, placeholder: {
+                        Text(L10n.usernameOrEmail)
+                            .foregroundColor(.gray.opacity(0.3))
+                            .descStyle()
+                    })
+                    .standartStyle()
                     .autocapitalization(.none)
                     .padding(EdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12))
                     .background(RoundedRectangle(cornerRadius:6).stroke(Color.blue.opacity(0.7),lineWidth:2))
                     .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
                 
-                PasswordField(title: "Password", value: .init(
+                PasswordField(title: L10n.password, value: .init(
                     get: { [viewmodel] in viewmodel.state.password },
                     set: { [viewmodel] in viewmodel.updatePassword($0) }
                 ))
+                    .standartStyle()
                     .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
                 
                 Button(action: {
@@ -46,9 +52,9 @@ struct LoginView: View {
                         self.isLoading = false
                     }
                 }) {
-                    Text("Submit")
-                        .fontWeight(.light)
+                    Text(L10n.submit)
                         .foregroundColor(.white)
+                        .standartStyle()
                 }
                 .frame(maxWidth: .infinity)
                 .frame(height: 50, alignment: .center)
@@ -58,6 +64,7 @@ struct LoginView: View {
                 .padding(.leading, 16)
                 .padding(.trailing, 16)
                 .disabled(!viewmodel.state.isButtonEnabled)
+                .accessibilityIdentifier("loginButton")
                 
                 Spacer()
                     
@@ -65,6 +72,7 @@ struct LoginView: View {
             })
         }.showLoading($isLoading) {
             isLoggedin = true
+            SessionData.setData(value: true, key: .isLogin)
         }
     }
     

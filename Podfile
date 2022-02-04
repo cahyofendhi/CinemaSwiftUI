@@ -6,9 +6,19 @@ target 'CinemaSwiftUI (iOS)' do
   use_frameworks!
 
   # Pods for CinemaSwiftUI (iOS)
-  pod 'Alamofire', '~> 5.5'
+  pod 'Alamofire'
   pod 'Kingfisher', '~> 7.0'
   pod 'AlertToast'
+  pod 'RealmSwift'
+  pod 'SwiftGen', '~> 6.0'
+  
+  target 'Tests iOS' do
+    inherit! :search_paths
+    pod 'Alamofire'
+    pod 'Kingfisher', '~> 7.0'
+    pod 'AlertToast'
+    pod 'RealmSwift'
+  end
 
 end
 
