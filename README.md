@@ -6,7 +6,6 @@ Sample project built with SwiftUI and use MVVM pattern, this application impleme
 
 #### Requirement
 ```
-- iOS 11.0+
 - Xcode 12.5
 ```
 
